@@ -88,3 +88,118 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	width: 100%;
 	min-width: 1200px;
 }
+/* Step */
+.StepNav{
+	padding: 32px 0;
+}
+.StepNav .title{
+	text-align: center;
+	font-size: 30px;
+	line-height: 38px;
+	margin-bottom: 24px;
+	color: #797f8c;
+}
+/* stepList */
+.stepList{
+	position: relative;
+	font-size: 0;
+	text-align: center;
+}
+.stepList:after,
+.stepList:before{
+    position: absolute;
+    left: 242px;
+    top: 18px;
+    z-index: 0;
+    content: "";
+    height: 2px;
+}
+.stepList:before{
+	background: #cfd4e2;
+	right: 242px;
+}
+.stepList:after{
+	background: #64bdff;
+}
+.stepList li{
+	position: relative;
+	z-index: 1;
+	width: 240px;
+	display: inline-block;
+}
+.stepList .icon{
+	width: 58px;
+    display: block;
+    margin: 0 auto;
+    background: #f6f6f7;
+}
+.stepList .icon i{
+	font-size: 40px;
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-image: linear-gradient(#B1B7C4, #CFD4E2);
+	display: block;
+	margin: 0 auto;
+}
+.stepList .text{
+	font-size: 14px;
+	line-height: 28px;
+	color: #797f8c;
+	white-space: nowrap;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+/* stpe1 */
+.stepList.stpe1 li:nth-child(1) .icon i{
+	background-image: linear-gradient(#4498E2, #64BDFF);
+}
+.stepList.stpe1 li:nth-child(1) .text{
+	color: #333;
+}
+/* stpe2 */
+.stepList.stpe2:after{
+	right: 722px;
+}
+.stepList.stpe2 li:nth-child(1) .icon i{
+	background-image: linear-gradient(#5CBC88, #71E2A7);
+}
+.stepList.stpe2 li:nth-child(2) .icon i{
+	background-image: linear-gradient(#4498E2, #64BDFF);
+}
+.stepList.stpe2 li:nth-child(2) .text{
+	color: #333;
+}
+/* stpe3 */
+.stepList.stpe3:after{
+	right: 482px;
+}
+.stepList.stpe3 li:nth-child(1) .icon i,
+.stepList.stpe3 li:nth-child(2) .icon i
+{
+	background-image: linear-gradient(#5CBC88, #71E2A7);
+}
+.stepList.stpe3 li:nth-child(3) .icon i{
+	background-image: linear-gradient(#4498E2, #64BDFF);
+}
+.stepList.stpe3 li:nth-child(3) .text{
+	color: #333;
+}
+/* stpe4 */
+.stepList.stpe4:after{
+	right: 242px;
+}
+.stepList.stpe4 li:nth-child(1) .icon i,
+.stepList.stpe4 li:nth-child(2) .icon i,
+.stepList.stpe4 li:nth-child(3) .icon i
+{
+	background-image: linear-gradient(#5CBC88, #71E2A7);
+}
+.stepList.stpe4 li:nth-child(4) .icon i{
+	background-image: linear-gradient(#4498E2, #64BDFF);
+}
+.stepList.stpe4 li:nth-child(4) .text{
+	color: #333;
+}
