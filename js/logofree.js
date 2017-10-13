@@ -1,4 +1,4 @@
-// 第及步状态显示
+// 1. 操作状态
 $.guide = function(step) {
 	// $('.guide li').removeClass('active');
 	$('.guide li:nth-child('+step+')').addClass('active');
@@ -22,9 +22,11 @@ $.loadMaterial = function(){
 	var _DOM = '.material';
 
 	$.guide(2);
+	// 2.发送请求
 	$.post('/openapi/logo/material', $.svgParams, function(json){
 		$('ul', _DOM).empty();
 		if (json.length) {
+			// 2.1 遍历循环结果
 			$(json).each(function(){
 				// $('ul', _DOM).append('<li><a href="javascript:;" data-id="'+this.id+'"><img src="'+this.svg+'" /></a></li>')
 				$('ul', _DOM).append('<li><a href="javascript:;" data-id="'+this.id+'">'
@@ -34,6 +36,7 @@ $.loadMaterial = function(){
 			$('ul', _DOM).html('<div class="notfound">暂无相关图形</div>');
 		}
 
+		// 2.2 logo点击，出发事件
 		$('li>a', _DOM).on('click', function(){
 			var id = $(this).data('id');
 
@@ -48,17 +51,20 @@ $.loadMaterial = function(){
 		});
 	},'json');
 
+	// 2.3 Logofree 物料示意
 	var url = '/openapi/logo/materialPreview?material_id=373&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text;
 	$.post('/openapi/logo/application', {logourl: url}, function(html){
 		$('.sep-logo-application').html(html);
 	});
 
+	// 筛选条件
 	$('.toolbar [name=trade] option').each(function(){
 		if ($(this).val()==$.svgParams.trade) {
 			$(this).prop('selected', 1);
 		}
 	})
 
+	// 点击下一步
 	$('.btn-next', _DOM).off('click').on('click', function(){
 		if ($.svgParams.material_id) {
 			$.loadEditor();
@@ -68,6 +74,7 @@ $.loadMaterial = function(){
 		}
 	});
 
+	// 换一批
 	$('.btn-reload', _DOM).off('click').on('click', function(){
 		$.loadMaterial();
 	});
