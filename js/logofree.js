@@ -96,7 +96,7 @@ $.loadEditor = function(){
 	$.loading();
 	$.post('/openapi/logo/svg', $.svgParams, function(ret){
 		$('.svg-editor').html(ret);
-		$.svgEditor('svg-draw', $.svgParams);
+		$.svgEditor('svg-draw', $.svgParams); // 编辑svg
 
 		$('.btn-checkout').off('click').on('click', function(){
 			$('#svg-ghost').empty();
