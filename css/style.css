@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS basic */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{ margin: 0; padding: 0; box-sizing: border-box;}
+fieldset,img{ border: 0; }
+img{vertical-align: top;}
+:focus{ outline: 0; }
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{ font-style: normal; font-weight: normal; }
+h1,h2,h3,h4,h5,h6{ font-size: 100%; font-weight: normal; font-family: "Arial","Hiragino Sans GB", \5fae\8f6f\96c5\9ed1, "Helvetica", "sans-serif"; }
+input,button,textarea,select{ *font-size: 100%; border:none;}
+body{ background:#fff;font: 12px/1.5 "Arial","Hiragino Sans GB", \5fae\8f6f\96c5\9ed1, "Helvetica", "sans-serif"; }
+ol,ul,li{ list-style: none; }
+table{ border-collapse: collapse; border-spacing: 0; }
+i{ font-style: normal;}
+:link, :visited, ins{ text-decoration: none; }
+.rel{position: relative;}.abs{position: absolute;}.fl{float: left;}.fr{float: right;}
+.w{width: 1200px;min-width:1200px;margin: 0 auto;position: relative;}
+a{color: #666;}a:hover{transition : color 0.2s linear 0s,background-color 0.3 linear 0s;color: #63b2f5;}
+.clearfix:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block;}
+
+/* common style */
+.Top{
+	height: 79px;
+	width: 100%;
+	min-width: 1200px;
+	background: #fff;
+	border-bottom: 1px solid #e5e5e5;
+}
+.logo{
+	margin-top: 14px;
+	float: left;
+}
+.logo a{
+	width: 120px;
+	height: 36px;
+	background: url(../images/logo.svg) center no-repeat;
+	background-size: 100%;
+	display: block;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+/* nav style */
+.nav{
+	
+}
+.nav li{
+	float: left;
+	margin-left: 42px;
+}
+.nav .sub{
+	padding: 0 12px;
+	font-size: 16px;
+	line-height: 77px;
+	color: #222;
+	display: block;
+}
+.nav .sub i{
+	font-size: 18px;
+	vertical-align: middle;
+	margin-left: 5px;
+}
+.nav .sub:hover{
+	color: #17e;
+	border-bottom: 2px solid #17e;
+}
+/* tools */
+.tools{
+	float: right;
+	margin-top: 24px;
+}
+.tools a{
+	font-size: 14px;
+	line-height: 22px;
+	color: #666;
+	margin-left: 12px;
+	display: inline-block;
+}
+.tools a i{
+	color: #999;
+	font-size: 16px;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+
+.Main{
+	background: #f6f6f6;
+	width: 100%;
+	min-width: 1200px;
+}
