@@ -14,7 +14,7 @@ i{ font-style: normal;}
 :link, :visited, ins{ text-decoration: none; }
 .rel{position: relative;}.abs{position: absolute;}.fl{float: left;}.fr{float: right;}
 .w{width: 1200px;min-width:1200px;margin: 0 auto;position: relative;}
-a{color: #666;}a:hover{transition : color 0.2s linear 0s,background-color 0.3 linear 0s;color: #63b2f5;}
+a{color: #9ca3af;}a:hover{transition : color 0.2s linear 0s,background-color 0.3 linear 0s;color: #63b2f5;}
 .clearfix:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
 .clearfix{*zoom:1;}
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block;}
@@ -208,6 +208,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	position: relative;
 }
 
+/* footer */
+.Footer{
+	width: 100%;
+	min-width: 1200px;
+	background: #3e4248;
+	clear: both;
+}
+
 /* radius */
 .radiusBlock{
 	position: relative;
@@ -239,4 +247,56 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     right: 0;
     bottom: 0;
     background:radial-gradient(20px at bottom right,#f6f6f6 50%,#fff 50%);
+}
+
+/* projectList */
+.projectList{padding: 40px 0;font-size: 0;text-align: center;}
+.projectList li{width: 82px;margin: 0 42px;display: inline-block;}
+.projectList li i{
+	font-size: 78px;
+	width: 80px;
+	height: 80px;
+	border: 1px solid #545860;
+	border-radius: 50%;
+	text-align: center;
+	color: #839893;
+	background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#838993), to(#9CA3AF));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+.projectList li .text{
+	font-size: 14px;
+	line-height: 32px;
+	color: #9ca3af;
+	height: 32px;
+	margin-top: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+/* copyright */
+.copyright{
+	width: 100%;
+	height: 80px;
+	padding: 20px 0;
+	min-width: 1200px;
+	background: #2e3136;
+	color: #9ca3af;
+	font-size: 14px;
+}
+.copyright .inner{
+	padding-left: 332px;	
+}
+.copyright .footerLogo{
+	width: 228px;
+	height: 40px;
+	margin-left: -332px;
+	float: left;
+}
+.copyright .inner{
+	height: 40px;
+	line-height: 40px;
 }
