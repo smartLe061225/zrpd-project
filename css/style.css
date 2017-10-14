@@ -21,10 +21,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .p36-52{
 	padding: 36px 0 52px;
 }
+.mb10{
+	margin-bottom: 10px;
+}
 
 /*下拉框样式*/
 .Mselect{position: relative;font-size: 14px;width: 150px; height: 42px; line-height: 42px;color: #999; text-indent:10px; background-color: #FFFFFF; padding-bottom: 1px; cursor: pointer;}
-.Mchecked{ width: 100%;border-radius: 3px; border: 1px solid #ddd;background:url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAGCAQAAABZEmc3AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfhBx8MOiC8S/6LAAAAYklEQVQI11WMuxGAIBQEV4YUAghNjX2BNkUH9PI6oAk7cGzCAqhAA8YPF+3M3t1wXCd9RsQ2MpJCpwKSHjawZvcqx5q/okFtFW0/FlFb0d8S9ftSAJbi909Bm2hkniBufwU3vVsRp4Ns//cAAAAASUVORK5CYII=) center right no-repeat;}
+.Mchecked{color: #333;width: 100%;border-radius: 3px; border: 1px solid #ddd;background:url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAGCAQAAABZEmc3AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfhBx8MOiC8S/6LAAAAYklEQVQI11WMuxGAIBQEV4YUAghNjX2BNkUH9PI6oAk7cGzCAqhAA8YPF+3M3t1wXCd9RsQ2MpJCpwKSHjawZvcqx5q/okFtFW0/FlFb0d8S9ftSAJbi909Bm2hkniBufwU3vVsRp4Ns//cAAAAASUVORK5CYII=) center right no-repeat;}
 .McheckedOn{background-image: url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAGCAQAAABZEmc3AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfhBx8MOQJCBuysAAAAbklEQVQI11WOuw2AMBBDH4SGioKSHSiyQZZgg5MYJTswU5CAERAlTWgjHQWIj11Zz5aMGjVqtF/DGrS/0+0CANndYqF0NQw8ygGJduwAxi5a5AslVbMkABKzpOrFOQR/PN2D4N9lNunGXw3t9YQTnwUoEEAekUEAAAAASUVORK5CYII=);}
 .Mchecked i{color: #999999;}
 .MoptionBox{ width: 100%; max-height: 174px; background-color: #fff; display: none; border-bottom: 1px solid #e5e5e5; position: absolute; z-index: 99;top: 100%; border-top: 1px solid #e5e5e5; overflow-y: auto;}
@@ -487,9 +490,131 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	float: left;
 	overflow: hidden;
 }
-
+/* colorSelectList */
+.colorSelectList{
+	margin-left: -26px;
+}
+.colorSelectList li{
+	width: 50px;
+	height: 50px;
+	margin-left: 26px;
+	margin-bottom: 15px;
+	float: left;
+}
+.colorSelectList li a{
+	width: 50px;
+	height: 50px;
+	display: block;
+	border-radius: 3px;
+}
+/* formatList */
+.formatList{
+	margin-left: -20px;
+}
+.formatList li{
+	float: left;
+	margin-left: 20px;
+	cursor: pointer;
+}
+.formatList .pic{
+	position: relative;
+	height: 80px;
+	border: 1px solid #ddd;
+	background: #fff;
+	display: block;
+}
+.formatList .text{
+	font-size: 14px;
+	line-height: 24px;
+	color: #666;
+	text-align: center;
+	display: block;
+	margin-top: 6px;
+}
+.formatList li i{
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+	color: #1177ee;
+	display: none;
+}
+.formatList li:hover .pic,
+.formatList li.active .pic{
+	border-color: #1177ee;
+}
+.formatList li:hover i,
+.formatList li.active i{
+	display: block;
+}
+/* enterInput */
+.enterInput{
+	font-size: 14px;
+	height: 42px;
+	margin-bottom: 8px;
+}
+.enterInput .ipt-text{
+	width: 229px;
+	height: 42px;
+	padding: 0 12px;
+	border: 1px solid #ddd;
+	border-radius: 3px 0 0 3px;
+	border-right: 0;
+	display: block;
+	float: left;
+}
+.enterInput .btn{
+	width: 70px;
+	height: 42px;
+	font-size: 14px;
+	color: #fff;
+	background-image: linear-gradient(#3399ff, #1177ee);
+	display: block;
+	float: left;
+	border-radius: 0 3px 3px 0;
+	cursor: pointer;
+}
 /* Step2 */
 .Step2{}
 .Step2 .radiusBlock{
 	padding: 40px 60px;
+}
+
+
+.editorLeft{
+	background: #fff;
+	padding: 52px;
+	float: left;
+}
+.editorRight{
+	width: 372px;
+	background: #fcfcfc;
+	border-left: 1px solid #ddd;
+	float: right;
+	min-height: 724px;
+}
+.editorRight .Items{
+	padding: 24px 36px;
+	border-bottom: 1px solid #ddd;
+}
+.editorRight .Items:last-child{
+	border-bottom: none;
+}
+.editorRight .select-fonts{
+	width: 100%;
+}
+.Heading{
+	font-size: 14px;
+	line-height: 32px;
+	height: 32px;
+	color: #666;
+}
+/* svg-editor */
+.svg-editor{
+    width: 724px;
+    height: 504px;
+    border: 12px solid #ddd;
+    background: #f9f9f9 url(http://www.logofree.cn/themes/logofree/img/grid.svg);
 }
