@@ -24,6 +24,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .mb10{
 	margin-bottom: 10px;
 }
+.tac{
+	text-align: center;
+}
+.block80{
+	height: 80px;
+	clear: both;
+}
 
 /*下拉框样式*/
 .Mselect{position: relative;font-size: 14px;width: 150px; height: 42px; line-height: 42px;color: #999; text-indent:10px; background-color: #FFFFFF; padding-bottom: 1px; cursor: pointer;}
@@ -101,6 +108,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	background: #f6f6f6;
 	width: 100%;
 	min-width: 1200px;
+	padding-bottom: 100px;
 }
 /* Step */
 .StepNav{
@@ -224,6 +232,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	padding-top: 48px;
 	text-align: center;
 }
+.Button{
+	padding: 0 42px;
+	height: 64px;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 18px;
+}
 .button{
 	height: 48px;
 	font-size: 16px;
@@ -233,6 +248,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	display: inline-block;
 	cursor: pointer;
 }
+.block-button{
+	margin-right: 20px;
+}
+.block-button i{
+	font-size: 36px;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+.block-button .text{
+	font-size: 14px;
+	line-height: 24px;
+	color: #666;
+	margin-top: 10px;
+	display: block;
+	white-space: nowrap;
+}
 .default-button{	
 	border: 1px solid #cfd4e2;
 	color: #797f8c;		
@@ -240,6 +271,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .blue-button{
 	color: #fff;
 	background-image: linear-gradient(#3399ff, #1177ee);
+}
+.green-button{
+	background-image: linear-gradient(#6fdfa4,#64ca94);
+}
+.orange-button{
+	background-image: linear-gradient(#fa922a,#f26f0e);
 }
 
 /* footer */
@@ -611,6 +648,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	height: 32px;
 	color: #666;
 }
+
+/* Step4 */
+.Step4 .radiusBlock{
+	padding: 50px;
+}
+
 /* svg-editor */
 .svg-editor{
     width: 724px;
@@ -619,9 +662,46 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     background: #f9f9f9 url(http://www.logofree.cn/themes/logofree/img/grid.svg);
 }
 
+.design-type{
+	width: 666px;
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+	margin: 42px auto;
+	word-break:break-all; 
+}
+.design-type a{
+	margin: 0 18px;
+	color: #666;
+	/* white-space: nowrap; */
+}
 
+.svg-preview{
+	width: 500px;
+	height: 500px;
+	border: 2px solid #ddd;
+	float: left;
+}
 
+.logo-information{
+	width: 545px;
+	float: right;
+}
+.tips-title{
+	font-size: 16px;
+	line-height: 22px;
+	margin-bottom: 16px;
+	color: #333;
+}
 
+.info-details{
+	font-size: 14px;
+	line-height: 24px;
+	color: #666;
+}
+.info-details dd{
+	padding-left: 22px;
+}
 
 .better-checkoutBlock{
 	font-size: 14px;
