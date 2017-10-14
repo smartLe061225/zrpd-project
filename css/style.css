@@ -553,7 +553,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .enterInput{
 	font-size: 14px;
 	height: 42px;
-	margin-bottom: 8px;
+	margin-bottom: 10px;
 }
 .enterInput .ipt-text{
 	width: 229px;
@@ -617,4 +617,100 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     height: 504px;
     border: 12px solid #ddd;
     background: #f9f9f9 url(http://www.logofree.cn/themes/logofree/img/grid.svg);
+}
+
+
+
+
+
+.better-checkoutBlock{
+	font-size: 14px;
+	line-height: 24px;
+	color: #666;
+	margin-bottom: 14px;
+}
+
+/* ============== */
+/* CHECKBOX TYPE */
+/* ============= */
+
+.better-checkout {
+    display: none;
+}
+.better-checkout + label {
+    cursor: pointer;
+    vertical-align: middle;
+}
+.better-checkout + label {
+	background-color: #ccc;
+	padding: 9px;
+	border-radius: 50px;
+	display: inline-block;
+	position: relative;
+	margin-right: 8px;
+	-webkit-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+	width: 45px;
+	height: 24px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.better-checkout + label:after {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	-webkit-transition: box-shadow 0.1s ease-in;
+	transition: box-shadow 0.1s ease-in;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 100px;
+	box-shadow: inset 0 0 0 0 #eee, 0 0 1px rgba(0,0,0,0.4);
+}
+
+.better-checkout + label:before {
+	content: ' ';
+	position: absolute;
+	background: white;
+	top: 1px;
+	left: 1px;
+	z-index: 999999;
+	width: 22px;
+	-webkit-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+	height: 22px;
+	border-radius: 50%;
+	box-shadow: 0 3px 1px rgba(0,0,0,0.05), 0 0px 1px rgba(0,0,0,0.3);
+}
+
+.better-checkout:active + label:after {
+	box-shadow: inset 0 0 0 20px #eee, 0 0 1px #eee;
+}
+
+.better-checkout:active + label:before {
+	width: 26px;
+}
+
+.better-checkout:checked:active + label:before {
+	width: 26px;
+	left: 20px;
+}
+
+.better-checkout + label:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.better-checkout:checked + label:before {
+	content: ' ';
+	position: absolute;
+	left: 22px;
+}
+
+.better-checkout:checked + label:after {
+	content: ' ';
+	font-size: 1.5em;
+	position: absolute;
+	background: #1177ee;
+	box-shadow: 0 0 1px #1177ee;
 }
