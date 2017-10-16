@@ -1,6 +1,9 @@
 // 1. step bar progress
 $.progress = function(step) {
-    $('.js-step-bar').addClass('step'+step);
+	var stepBar = $('.js-step-bar'),
+		stepBarOn = 'js-step-bar stepList step' + step;
+	stepBar.attr('class',stepBarOn);
+	
     $('.Step1,.Step2,.Step3,.Step4').hide();
     $('.Step'+step).show();
 }
