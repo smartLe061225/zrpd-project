@@ -54,6 +54,37 @@ $.loadMaterial = function(){
             });
         });
     },'json');
+
+    // 默认VI图
+    var url = BaseUrl + '/openapi/logo/materialPreview?material_id=378&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text;
+	$.post(defaultLogoTplUrl, {logourl: url}, function(html){
+		$('.logoApplicationList').html(html.tpl);
+	});
+
+    // feature - 第二步：下一步
+    $('.js-go-step3').off('click').on('click', function(){
+        if ($.svgParams.material_id) {
+            $.loadEditor();
+        } else {
+            alert('请选择一个图形');
+            return;
+        }
+    });
+
+    $('.js-refresh', _DOM).off('click').on('click', function(){
+        $.loadMaterial();
+    });
+
+    // feature - 第二步：当筛选条件改变时，触发
+    $('.Filter .Moption').off('click').on('click', function(){
+        $.svgParams.trade = $('.Filter [name=trade]').val();
+        $.svgParams.shape = $('.Filter [name=shape]').val();
+        $.svgParams.alpha = $('.Filter [name=alpha]').val();
+        $.svgParams.numeric = $('.Filter [name=numeric]').val();
+        $.svgParams.element = $('.Filter [name=element]').val();
+        $.loadMaterial();
+    });
+
 }
 
 $(function(){
