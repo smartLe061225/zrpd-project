@@ -1,33 +1,33 @@
 // 1. step bar progress
 $.progress = function(step) {
-	var stepBar = $('.js-step-bar'),
-		stepBarOn = 'js-step-bar stepList step' + step;
-	stepBar.attr('class',stepBarOn);
-	
+    var stepBar = $('.js-step-bar'),
+        stepBarOn = 'js-step-bar stepList step' + step;
+    stepBar.attr('class',stepBarOn);
+
     $('.Step1,.Step2,.Step3,.Step4').hide();
     $('.Step'+step).show();
 }
 
 // 第一步：表单验证
 $.loadForm = function(){
-	$.progress(1);
+    $.progress(1);
 
-	var checkFormObj = $('.js-logo-form');
-	checkFormObj.off('submit').on('submit', function(){
-		seajs.use(['/js/plugin/validform/Validform_v5.3.2_min.js'], function(){
-			$('.js-logo-form').Validform({
-				callback: function(){
-					$.svgParams = {
-						name: {text:$('[name=name]').val()},
-						slogan: {text:$('[name=slogan]').val()},
-						trade: $('[name=trade]').val()
-					}
-					$.loadMaterial();
-				}
-			})
-		});
-		return false;
-	});
+    var checkFormObj = $('.js-logo-form');
+    checkFormObj.off('submit').on('submit', function(){
+        seajs.use(['/js/plugin/validform/Validform_v5.3.2_min.js'], function(){
+            $('.js-logo-form').Validform({
+                callback: function(){
+                    $.svgParams = {
+                        name: {text:$('[name=name]').val()},
+                        slogan: {text:$('[name=slogan]').val()},
+                        trade: $('[name=trade]').val()
+                    }
+                    $.loadMaterial();
+                }
+            })
+        });
+        return false;
+    });
 }
 
 // 第二步：展示模板
@@ -60,9 +60,9 @@ $.loadMaterial = function(){
 
     // 默认VI图
     var url = BaseUrl + '/openapi/logo/materialPreview?material_id=378&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text;
-	$.post(defaultLogoTplUrl, {logourl: url}, function(html){
-		$('.logoApplicationList').html(html.tpl);
-	});
+    $.post(defaultLogoTplUrl, {logourl: url}, function(html){
+        $('.logoApplicationList').html(html.tpl);
+    });
 
     // feature - 第二步：下一步
     $('.js-go-step3').off('click').on('click', function(){
@@ -91,6 +91,6 @@ $.loadMaterial = function(){
 }
 
 $(function(){
-	$.svgParams = new Object();
-	$.loadForm();
+    $.svgParams = new Object();
+    $.loadForm();
 })

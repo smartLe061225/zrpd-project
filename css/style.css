@@ -195,55 +195,55 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	-ms-text-overflow: ellipsis;
 	text-overflow: ellipsis;
 }
-/* stpe1 */
-.stepList.stpe1 li:nth-child(1) .icon i{
+/* step1 */
+.stepList.step1 li:nth-child(1) .icon i{
 	background-image: linear-gradient(#4498E2, #64BDFF);
 }
-.stepList.stpe1 li:nth-child(1) .text{
+.stepList.step1 li:nth-child(1) .text{
 	color: #17e;
 }
-/* stpe2 */
-.stepList.stpe2:after{
+/* step2 */
+.stepList.step2:after{
 	right: 722px;
 }
-.stepList.stpe2 li:nth-child(1) .icon i{
+.stepList.step2 li:nth-child(1) .icon i{
 	background-image: linear-gradient(#5CBC88, #71E2A7);
 }
-.stepList.stpe2 li:nth-child(2) .icon i{
+.stepList.step2 li:nth-child(2) .icon i{
 	background-image: linear-gradient(#4498E2, #64BDFF);
 }
-.stepList.stpe2 li:nth-child(2) .text{
+.stepList.step2 li:nth-child(2) .text{
 	color: #17e;
 }
-/* stpe3 */
-.stepList.stpe3:after{
+/* step3 */
+.stepList.step3:after{
 	right: 482px;
 }
-.stepList.stpe3 li:nth-child(1) .icon i,
-.stepList.stpe3 li:nth-child(2) .icon i
+.stepList.step3 li:nth-child(1) .icon i,
+.stepList.step3 li:nth-child(2) .icon i
 {
 	background-image: linear-gradient(#5CBC88, #71E2A7);
 }
-.stepList.stpe3 li:nth-child(3) .icon i{
+.stepList.step3 li:nth-child(3) .icon i{
 	background-image: linear-gradient(#4498E2, #64BDFF);
 }
-.stepList.stpe3 li:nth-child(3) .text{
+.stepList.step3 li:nth-child(3) .text{
 	color: #17e;
 }
-/* stpe4 */
-.stepList.stpe4:after{
+/* step4 */
+.stepList.step4:after{
 	right: 242px;
 }
-.stepList.stpe4 li:nth-child(1) .icon i,
-.stepList.stpe4 li:nth-child(2) .icon i,
-.stepList.stpe4 li:nth-child(3) .icon i
+.stepList.step4 li:nth-child(1) .icon i,
+.stepList.step4 li:nth-child(2) .icon i,
+.stepList.step4 li:nth-child(3) .icon i
 {
 	background-image: linear-gradient(#5CBC88, #71E2A7);
 }
-.stepList.stpe4 li:nth-child(4) .icon i{
+.stepList.step4 li:nth-child(4) .icon i{
 	background-image: linear-gradient(#4498E2, #64BDFF);
 }
-.stepList.stpe4 li:nth-child(4) .text{
+.stepList.step4 li:nth-child(4) .text{
 	color: #17e;
 }
 
@@ -412,16 +412,16 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	line-height: 40px;
 }
 
+.demoLogo{
+	padding: 36px 220px 52px;
+}
 /* StepContent */
 .StepContent{
 	position: relative;
 }
 
-.Step1 .radiusBlock{
-	padding: 0 220px;
-}
 .StepForm{
-	padding: 70px 0;
+	padding: 70px 0 70px 220px;
 }
 .StepForm .items{
 	margin-bottom: 14px;
@@ -727,9 +727,20 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 
 .better-checkoutBlock{
 	font-size: 14px;
-	line-height: 24px;
+	line-height: 24px;''
 	color: #666;
 	margin-bottom: 14px;
+}
+
+/* Validform_wrong */
+.Validform_checktip{
+	font-size: 14px;
+}
+.Validform_error{
+	border-color: #c00!important;
+}
+.Validform_wrong{
+	color: #c00;
 }
 
 /* ============== */
