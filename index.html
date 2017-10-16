@@ -27,7 +27,7 @@
         <div class="StepNav">
             <div class="w">
                 <h2 class="title">Logo定制</h2>
-                <ul class="stepList stpe1">
+                <ul class="js-step-bar stepList stpe1">
                     <li><span class="icon"><i class="icon-step1"></i></span><span class="text">公司名称</span></li>
                     <li><span class="icon"><i class="icon-step2"></i></span><span class="text">选择图形</span></li>
                     <li><span class="icon"><i class="icon-step3"></i></span><span class="text">编辑Logo</span></li>
@@ -39,23 +39,23 @@
         <div class="w">
             <div class="StepContent">
                 <div class="rel Step1 js-step1">
-                <form action="">
+                <form method="post" class="js-logofree-form" data-plugin="validator">
                     <div class="radiusBlock">
                         <div class="radiusTL"></div><div class="radiusRT"></div><div class="radiusBL"></div><div class="radiusBR"></div>
                     	<div class="StepForm">
                             <div class="items">
                                 <label class="label">企业简称：</label>
-                                <input class="ipt-text" type="text" placeholder="请填写企业简称（中文或英文）">
+                                <input class="ipt-text" type="text" placeholder="请填写企业简称（中文或英文）" valid="required" name="name">
                             </div>
                             <div class="items">
                                 <label class="label">副标：</label>
-                                <input class="ipt-text" type="text" placeholder="非必填（中文或英文）">
+                                <input class="ipt-text" type="text" placeholder="非必填（中文或英文）" name="slogan">
                             </div>
                             <div class="items">
                                 <label class="label">所属行业：</label>
                                 <div class="Mselect form-select">
 									<p class="Mchecked">请选择所属行业</p>
-									<input type="hidden" name="" />
+									<input type="hidden" name="trade" />
 									<div class="MoptionBox MScroll">
 										<span class="Moption" value="02">教育</span>
 										<span class="Moption" value="03">婚庆</span>
@@ -79,8 +79,8 @@
                         </div> <!-- end -->
                     </div>
                     <div class="actionGroup">
-                    	<button class="button default-button" type="button">清空内容</button>
-                    	<button class="button blue-button" type="button">下一步</button>
+                    	<button class="button default-button" type="reset">清空内容</button>
+                    	<button class="button blue-button" type="submit">下一步</button>
                     </div>
                 </form>
                 </div> <!-- Step one end -->
@@ -371,7 +371,8 @@
     </div> <!-- Footer end -->
 
 <script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+<script src="http://www.logofree.cn/assets/js/seajs/sea.js"></script>
 <script src="js/Mbase.js"></script>
-
+<script src="js/logofree.js"></script>
 </body>
 </html>
