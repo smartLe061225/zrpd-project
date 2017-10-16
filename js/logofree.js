@@ -8,10 +8,25 @@ $.progress = function(step) {
 // 第一步：表单验证
 $.loadForm = function(){
 	$.progress(1);
+
+	var checkFormObj = $('.js-logo-form');
+	checkFormObj.off('submit').on('submit', function(){
+		seajs.use(['/js/plugin/validform/Validform_v5.3.2_min.js'], function(){
+			$('.js-logo-form').Validform({
+				callback: function(){
+					$.svgParams = {
+						name: {text:$('[name=name]').val()},
+						slogan: {text:$('[name=slogan]').val()},
+						trade: $('[name=trade]').val()
+					}
+				}
+			})
+		});
+		return false;
+	});
 }
 
-
-
-$.fn.ready(function(){
+$(function(){
+	$.svgParams = new Object();
 	$.loadForm();
 })
