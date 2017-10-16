@@ -14,7 +14,7 @@ i{ font-style: normal;}
 :link, :visited, ins{ text-decoration: none; }
 .rel{position: relative;}.abs{position: absolute;}.fl{float: left;}.fr{float: right;}
 .w{width: 1200px;min-width:1200px;margin: 0 auto;position: relative;}
-a{color: #9ca3af;}a:hover{transition : color 0.2s linear 0s,background-color 0.3 linear 0s;color: #63b2f5;}
+a{color: #9ca3af;}a:hover{transition : color 0.2s linear 0s,background-color 0.3 linear 0s;color: #1177ee;}
 .clearfix:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
 .clearfix{*zoom:1;}
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block;}
@@ -497,8 +497,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 .selectLogoList li i{
 	position: absolute;
-	right: 0;
-	top: 0;
+	right: -1px;
+	top: -1px;
 	z-index: 5;
 	font-size: 32px;
 	color: #1177ee;
@@ -673,7 +673,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .design-type a{
 	margin: 0 18px;
 	color: #666;
-	/* white-space: nowrap; */
+	white-space: nowrap;
+	display: inline-block;
+}
+.design-type a:hover{
+	color: #1177ee;
 }
 
 .svg-preview{
