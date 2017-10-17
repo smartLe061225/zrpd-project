@@ -263,6 +263,7 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	border-radius: 3px;
 	color: #fff;
 	font-size: 18px;
+	cursor: pointer;
 }
 .button{
 	height: 48px;
