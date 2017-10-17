@@ -79,8 +79,7 @@ $.svgEditor = function(a, b) {
             b.ghost.clear(),
             c.setText(b)
         }),
-        $(".hide-slogan").off("click").on("click",
-        function() {
+        $(".js-hide-slogan").off("click").on("click", function() {
             this.checked ? $("#svg-slogan").hide() : $("#svg-slogan").show()
         }),
         $(".append-text").off("click").on("click",
