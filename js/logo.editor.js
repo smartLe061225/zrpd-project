@@ -149,7 +149,7 @@ $.svgEditor = function(a, b) {
         a.ghost.clear()
     },
     c.bindColorPicker = function(a, b, c) {
-        seajs.use(["http://www.logofree.cn/assets/js/colorpicker/bootstrap.colorpickersliders.css", "http://www.logofree.cn/assets/js/colorpicker/tinycolor.min.js", "http://www.logofree.cn/assets/js/colorpicker/bootstrap.colorpickersliders.js"],
+        seajs.use(["/js/plugin/colorpicker/bootstrap.colorpickersliders.css", "/js/plugin/colorpicker/tinycolor.min.js", "/js/plugin/colorpicker/bootstrap.colorpickersliders.js"],
         function() {
             var d = function(a) {
                 for (var b = a.toString().match(/\d+/g), c = "#", d = 0; 3 > d; d++) c += ("0" + Number(b[d]).toString(16)).slice( - 2);
@@ -167,14 +167,14 @@ $.svgEditor = function(a, b) {
                 return "rgb(" + c.join(",") + ")"
             },
             f = ["c00000", "ff0000", "ffc000", "ffff00", "92d050", "00b050", "00b0f0", "0070c0", "002060", "7030a0", "f2f2f2", "7f7f7f", "ddd9c3", "c6d9f0", "dbe5f1", "f2dcdb", "ebf1dd", "e5e0ec", "dbeef3", "fdeada", "d8d8d8", "595959", "c4bd97", "8db3e2", "b8cce4", "e5b9b7", "d7e3bc", "ccc1d9", "b7dde8", "fbd5b5", "bfbfbf", "3f3f3f", "938953", "548dd4", "95b3d7", "d99694", "c3d69b", "b2a2c7", "92cddc", "fac08f", "a5a5a5", "262626", "494429", "17365d", "366092", "953734", "76923c", "5f497a", "31859b", "e36c09", "7f7f7f", "0c0c0c", "1d1b10", "0f243e", "244061", "632423", "4f6128", "3f3151", "205867", "974806"],
-            g = '<div class="mt-color-box"><div>常用颜色：</div><div class="mt-color-cards"></div><div style="margin-bottom:5px">自定义：</div><div class="mt-color-picker"></div></div>';
+            g = '<div class="picker-color-box"><div class="title">常用颜色：</div><div class="picker-color-cards js-color-cards"></div><div class="title">自定义：</div><div class="color-picker js-color-picker"></div></div>';
             $(a).append(g);
             for (x in f) {
                 var h = f[x],
                 i = '<a href="javascript:;" style="background-color:#' + h + '" data-color="' + h + '"></a>';
-                $(".mt-color-cards", a).append(i)
+                $(".js-color-cards", a).append(i)
             }
-            $(".mt-color-picker", a).ColorPickerSliders({
+            $(".js-color-picker", a).ColorPickerSliders({
                 color: b,
                 flat: !0,
                 sliders: !1,
@@ -185,8 +185,7 @@ $.svgEditor = function(a, b) {
                     c(d(e), e, "custom")
                 }
             }),
-            $(".mt-color-cards a", a).on("click",
-            function() {
+            $(".js-color-cards a", a).on("click", function() {
                 $(this).addClass("active"),
                 $(this).siblings().removeClass("active");
                 var a = $(this).data("color");
@@ -204,9 +203,9 @@ $.svgEditor = function(a, b) {
             b[g] = g
         }
         $(".js-svg-color").empty();
-        for (var h in b) $(".js-svg-color").append('<li><a style="background:' + b[h] + '" data-bg="' + b[h] + '"></a></li>');
+        for (var h in b) $(".js-svg-color").append('<li><a class="color" style="background:' + b[h] + '" data-bg="' + b[h] + '"></a></li>');
         $(".js-svg-color a").off("click").on("click",function(b) {
-            $(".mt-color-box").remove();
+            $(".picker-color-box").remove();
             var e = this,
             f = $(this).data("bg");
             c.bindColorPicker($(this).parent(), f,
@@ -219,7 +218,7 @@ $.svgEditor = function(a, b) {
                 b.stopPropagation()
             }),
             $(document).on("click",function() {
-                $(".mt-color-box").hide()
+                $(".picker-color-box").hide()
             })
         })
     },

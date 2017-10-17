@@ -235,12 +235,8 @@
                             <div class="editorRight">
                                 <div class="Items">
                                     <h5 class="Heading">颜色：</h5>
-                                    <ul class="clearfix colorSelectList">
+                                    <ul class="clearfix colorSelectList js-svg-color">
                                         <li><a style="background: #ee4136;"></a></li>
-                                        <li><a style="background: #27aae0;"></a></li>
-                                        <li><a style="background: #1177ee;"></a></li>
-                                        <li><a style="background: #5ec08b;"></a></li>
-                                        <li><a style="background: #4069ba;"></a></li>
                                     </ul>
 
                                     <h5 class="Heading">板式：</h5>
@@ -257,7 +253,7 @@
                                 </div> <!-- Items end -->
                                 <div class="Items">
                                     <h5 class="Heading">选择字体：</h5>
-                                    <div class="Mselect select-fonts mb10">
+                                    <div class="Mselect select-fonts mb10 js-svg-fonts">
                                         <p class="Mchecked">选择字体</p>
                                         <input type="hidden" name="shape" />
                                         <div class="MoptionBox MScroll">
@@ -318,7 +314,7 @@
                         
                     </div>
                     <div class="actionGroup">
-                        <button class="button default-button" type="button">清空内容</button>
+                        <button class="button default-button" type="button" onclick="$.progress(2)">上一步</button>
                         <button class="button blue-button" type="button">下一步</button>
                     </div>
                 </div> <!-- Step3 end -->
@@ -396,8 +392,7 @@
             </div>
         </div>
     </div> <!-- Footer end -->
-
-<script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://www.logofree.cn/assets/js/seajs/sea.js"></script>
 <script src="js/Mbase.js"></script>
 <script src="js/config.js"></script>
