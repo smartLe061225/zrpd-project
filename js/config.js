@@ -1,0 +1,8 @@
+var BaseUrl = "http://www.logofree.cn"
+// var listUrl = "http://192.168.200.140:8080/logo/queryForLogoList"
+// var listUrl = "http://www.logofree.cn/openapi/logo/material"
+var listUrl = "/data/list.json"
+var logoTplUrl = "/data/logo.json"
+var defaultLogoTplUrl = "/data/logodefault.json"
+var svgUrl = "/data/svg.json"
+var checkoutUrl = "/data/checkout.json"
