@@ -71,10 +71,9 @@ $.svgEditor = function(a, b) {
             b.ghost.clear(),
             c.setText(b)
         }),
-        $(".svg-atext-ipt .form-control").val(b.data.atext.text),
-        $(".svg-atext-ipt .btn").off("click").on("click",
-        function() {
-            var a = $(".svg-atext-ipt .form-control").val();
+        $(".js-svg-atext-ipt").val(b.data.atext.text),
+        $(".js-svg-atext-btn").off("click").on("click", function() {
+            var a = $(".js-svg-atext-ipt").val();
             b.data.atext.text = a,
             b.ghost.clear(),
             c.setText(b)
@@ -82,10 +81,9 @@ $.svgEditor = function(a, b) {
         $(".js-hide-slogan").off("click").on("click", function() {
             this.checked ? $("#svg-slogan").hide() : $("#svg-slogan").show()
         }),
-        $(".append-text").off("click").on("click",
-        function() {
-            var a = $(".append-text-ipt .form-control").val();
-            this.checked ? ($(".append-text-ipt").show(), $("#svg-atext").show(), b.data.atext.text = a) : ($(".append-text-ipt").hide(), $("#svg-atext").hide(), b.data.atext.text = ""),
+        $(".js-append-text").off("click").on("click", function() {
+            var a = $(".js-svg-atext-ipt").val();
+            this.checked ? ($(".js-svg-atext").show(), $("#svg-atext").show(), b.data.atext.text = a) : ($(".js-svg-atext").hide(), $("#svg-atext").hide(), b.data.atext.text = ""),
             c.setText(b)
         }),
         c
