@@ -56,10 +56,9 @@ $.svgEditor = function(a, b) {
             b.data.layout = a,
             c.layout(b)
         }),
-        $(".svg-name-ipt .form-control").val(b.data.name.text),
-        $(".svg-name-ipt .btn").off("click").on("click",
-        function() {
-            var a = $(".svg-name-ipt .form-control").val();
+        $(".js-svg-name").val(b.data.name.text),
+        $(".js-svg-name-btn").off("click").on("click", function() {
+            var a = $(".js-svg-name").val();
             b.data.name.text = a,
             b.ghost.clear(),
             c.setText(b)
