@@ -20,7 +20,8 @@ $.loadForm = function(){
                     $.svgParams = {
                         name: {text:$('[name=name]').val()},
                         slogan: {text:$('[name=slogan]').val()},
-                        trade: $('[name=trade]').val()
+                        trade: $('[name=trade]').val(),
+                        atext: {text:''}
                     }
                     $.loadMaterial();
                 }
@@ -87,7 +88,19 @@ $.loadMaterial = function(){
         $.svgParams.element = $('.Filter [name=element]').val();
         $.loadMaterial();
     });
+}
 
+// 第三步：编辑Logo
+$.loadEditor = function(){
+    // if (!$.login()) {
+    //     return;
+    // }
+    $.post(svgUrl, $.svgParams, function(ret){
+        $('.js-svg-editor').html(ret.svg);
+        $.svgEditor('svg-draw', $.svgParams);
+    });
+
+    $.progress(3);
 }
 
 $(function(){
