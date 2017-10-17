@@ -32,8 +32,8 @@ $.svgEditor = function(a, b) {
             $(".btn-checkout").prop("disabled", 0),
             a || (a = 1)
         }),
-        $(".svg-fonts a[data-chinese=0]").hide(),
-        $(".svg-fonts a").off("click").on("click",function() {
+        $(".js-svg-fonts .Moption[data-chinese=0]").hide(),
+        $(".js-svg-fonts .Moption").off("click").on("click",function() {
             var a = $(this).data("src");
             if (b.cur) {
                 switch ($(b.cur.node).attr("id")) {
@@ -239,8 +239,8 @@ $.svgEditor = function(a, b) {
         }
         if (d) {
             var e = /[\u4e00-\u9fa5]/;
-            $(".svg-fonts a").hide(),
-            e.exec(d) ? $(".svg-fonts a[data-chinese=1]").show() : $(".svg-fonts a[data-chinese=0]").show()
+            $(".js-svg-fonts .Moption").hide(),
+            e.exec(d) ? $(".js-svg-fonts .Moption[data-chinese=1]").show() : $(".js-svg-fonts .Moption[data-chinese=0]").show()
         }
         c.svgColor(b.el.node),
         b.ghost.clear().translate(0, 0),
