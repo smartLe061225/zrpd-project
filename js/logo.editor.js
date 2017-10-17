@@ -24,8 +24,7 @@ $.svgEditor = function(a, b) {
             a.stopPropagation()
         });
         var a = 0;
-        return c.setText(b,
-        function() {
+        return c.setText(b, function() {
             c.layout(b),
             c.selected(b.name),
             $(".svg-loading").remove(),
@@ -204,10 +203,9 @@ $.svgEditor = function(a, b) {
             var g = e[f];
             b[g] = g
         }
-        $(".svg-color ul").empty();
-        for (var h in b) $(".svg-color ul").append('<li><a class="color-card" style="background:' + b[h] + '" data-bg="' + b[h] + '">0</a></li>');
-        $(".svg-color a").off("click").on("click",
-        function(b) {
+        $(".js-svg-color").empty();
+        for (var h in b) $(".js-svg-color").append('<li><a style="background:' + b[h] + '" data-bg="' + b[h] + '"></a></li>');
+        $(".js-svg-color a").off("click").on("click",function(b) {
             $(".mt-color-box").remove();
             var e = this,
             f = $(this).data("bg");
@@ -220,8 +218,7 @@ $.svgEditor = function(a, b) {
                 $(a).html(d),
                 b.stopPropagation()
             }),
-            $(document).on("click",
-            function() {
+            $(document).on("click",function() {
                 $(".mt-color-box").hide()
             })
         })
