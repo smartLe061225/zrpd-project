@@ -28,7 +28,7 @@ $.svgEditor = function(a, b) {
             c.layout(b),
             c.selected(b.name),
             $(".svg-loading").remove(),
-            $(".btn-checkout").prop("disabled", 0),
+            $(".js-checkout-logo").prop("disabled", 0),
             a || (a = 1)
         }),
         $(".js-svg-fonts .Moption[data-chinese=0]").hide(),

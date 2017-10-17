@@ -98,9 +98,36 @@ $.loadEditor = function(){
     $.post(svgUrl, $.svgParams, function(ret){
         $('.js-svg-editor').html(ret.svg);
         $.svgEditor('svg-draw', $.svgParams);
+
+        $('.js-checkout-logo').off('click').on('click', function(){
+            $('#svg-ghost').empty();
+            var svg = $('.js-svg-editor').html();
+            $.checkout(svg);
+        });
     });
 
     $.progress(3);
+}
+
+// checkout log
+
+$.checkout = function(svg){
+    window.stop();
+    $.progress(4);
+    $.svgParams.svg = svg;
+    $.post(checkoutUrl, $.svgParams, function(json){
+        $('.js-svg-preview').html(json.svg);
+        $.svgParams.svg = json.svg;
+
+        $('.js-free-download').off('click').on('click', function(){
+            $.save($.svgParams);
+        });
+
+        $('.js-logo-order').off('click').on('click', function(){
+            $.placeOrder($.svgParams);
+        });
+
+    }, 'json');
 }
 
 $(function(){
