@@ -33,8 +33,7 @@ $.svgEditor = function(a, b) {
             a || (a = 1)
         }),
         $(".svg-fonts a[data-chinese=0]").hide(),
-        $(".svg-fonts a").off("click").on("click",
-        function() {
+        $(".svg-fonts a").off("click").on("click",function() {
             var a = $(this).data("src");
             if (b.cur) {
                 switch ($(b.cur.node).attr("id")) {
@@ -47,8 +46,7 @@ $.svgEditor = function(a, b) {
                 case "svg-atext":
                     b.data.atext.font = a
                 }
-                c.setText(b,
-                function() {
+                c.setText(b,function() {
                     $.selected(b.cur)
                 })
             }
@@ -96,7 +94,7 @@ $.svgEditor = function(a, b) {
         c
     },
     c.setText = function(a, b) {
-        a.data.name.text && (a.data.name.font = a.data.name.font ? a.data.name.font: "/assets/fonts/cn/fzhzgbjt.ttf", opentype.load(a.data.name.font,
+        a.data.name.text && (a.data.name.font = a.data.name.font ? a.data.name.font: "/fonts/cn/fzhzgbjt.ttf", opentype.load(a.data.name.font,
         function(c, d) {
             if (c) return console.log(d),
             void console.log("Font could not be loaded: " + c);
@@ -104,7 +102,7 @@ $.svgEditor = function(a, b) {
             $("#svg-name").html('<g transform="matrix(1,0,0,1,0,0)" fill="#3e3a39">' + e.toSVG() + "</g>"),
             b && b()
         })),
-        a.data.slogan.text && (a.data.slogan.font = a.data.slogan.font ? a.data.slogan.font: "/assets/fonts/cn/fzhzgbjt.ttf", opentype.load(a.data.slogan.font,
+        a.data.slogan.text && (a.data.slogan.font = a.data.slogan.font ? a.data.slogan.font: "/fonts/cn/fzhzgbjt.ttf", opentype.load(a.data.slogan.font,
         function(c, d) {
             if (c) return console.log(d),
             void console.log("Font could not be loaded: " + c);
@@ -112,7 +110,7 @@ $.svgEditor = function(a, b) {
             $("#svg-slogan").html('<g transform="matrix(1,0,0,1,0,0)" fill="#888888">' + e.toSVG() + "</g>"),
             b && b()
         })),
-        a.data.atext.text && (a.data.atext.font = a.data.atext.font ? a.data.atext.font: "/assets/fonts/cn/fzhzgbjt.ttf", opentype.load(a.data.atext.font,
+        a.data.atext.text && (a.data.atext.font = a.data.atext.font ? a.data.atext.font: "/fonts/cn/fzhzgbjt.ttf", opentype.load(a.data.atext.font,
         function(c, d) {
             if (c) return console.log(d),
             void console.log("Font could not be loaded: " + c);
@@ -152,7 +150,7 @@ $.svgEditor = function(a, b) {
         a.ghost.clear()
     },
     c.bindColorPicker = function(a, b, c) {
-        seajs.use(["/assets/js/colorpicker/bootstrap.colorpickersliders.css", "/assets/js/colorpicker/tinycolor.min.js", "/assets/js/colorpicker/bootstrap.colorpickersliders.js"],
+        seajs.use(["http://www.logofree.cn/assets/js/colorpicker/bootstrap.colorpickersliders.css", "http://www.logofree.cn/assets/js/colorpicker/tinycolor.min.js", "http://www.logofree.cn/assets/js/colorpicker/bootstrap.colorpickersliders.js"],
         function() {
             var d = function(a) {
                 for (var b = a.toString().match(/\d+/g), c = "#", d = 0; 3 > d; d++) c += ("0" + Number(b[d]).toString(16)).slice( - 2);
