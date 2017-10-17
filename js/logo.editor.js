@@ -50,8 +50,8 @@ $.svgEditor = function(a, b) {
                 })
             }
         }),
-        $(".svg-layout a").off("click").on("click",
-        function() {
+        $(".js-svg-layout li").off("click").on("click", function() {
+            $(this).addClass('active').siblings().removeClass('active');
             var a = $(this).data("id");
             b.data.layout = a,
             c.layout(b)
