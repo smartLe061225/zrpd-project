@@ -63,10 +63,10 @@ $.svgEditor = function(a, b) {
             b.ghost.clear(),
             c.setText(b)
         }),
-        $(".svg-slogan-ipt .form-control").val(b.data.slogan.text),
-        $(".svg-slogan-ipt .btn").off("click").on("click",
+        $(".js-svg-slogan").val(b.data.slogan.text),
+        $(".js-svg-slogan-btn").off("click").on("click",
         function() {
-            var a = $(".svg-slogan-ipt .form-control").val();
+            var a = $(".js-svg-slogan").val();
             b.data.slogan.text = a,
             b.ghost.clear(),
             c.setText(b)
