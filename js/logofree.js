@@ -18,7 +18,7 @@ $.loadForm = function(){
     	var html = '';
     	if (result.length) {
     		$(result).each(function(){
-                html += '<span class="Moption" value="'+ this.tradeCode +'">'+ this.tradeCategory +'</span>';
+                html += '<span class="Moption" value="'+ this.id +'">'+ this.tradeCategory +'</span>';
             });
     	}else{
     		html = '暂无数据'
@@ -70,6 +70,51 @@ $.loadForm = function(){
 $.loadMaterial = function(){
     var _DOM = '.js-filter-logo';
     $.progress(2);
+
+    // 筛选条件
+    $.post(ajaxFilterUrl, function(json){
+        var result = JSON.parse(json);
+        var shapeDOM = '',
+        	alphaDOM = '',
+        	numericDOM = '',
+        	elementDOM = '';
+        // 形状
+        if (result.shape.length) {
+        	$(result.shape).each(function(){
+                shapeDOM += '<span class="Moption" value="'+ this.id +'">'+this.name+'</span>'
+            });
+        }else{
+        	shapeDOM = '暂无形状';
+        }
+        // 字母
+        if (result.alpha.length) {
+            $(result.alpha).each(function(){
+                alphaDOM += '<span class="Moption" value="'+ this.id +'">'+this.name+'</span>'
+            });
+        }else{
+            alphaDOM = '暂无字母';
+        }
+        // 数字
+        if (result.numeric.length) {
+            $(result.numeric).each(function(){
+                numericDOM += '<span class="Moption" value="'+ this.id +'">'+this.name+'</span>'
+            });
+        }else{
+            numericDOM = '暂无数字';
+        }
+        // 元素
+        if (result.element.length) {
+            $(result.element).each(function(){
+                elementDOM += '<span class="Moption" value="'+ this.id +'">'+this.name+'</span>'
+            });
+        }else{
+            elementDOM = '暂无元素';
+        }
+        $('.js-ajax-shape').find('.mCSB_container').html(shapeDOM)        
+        $('.js-ajax-alpha').find('.mCSB_container').html(alphaDOM)
+        $('.js-ajax-numeric').find('.mCSB_container').html(numericDOM)
+        $('.js-ajax-element').find('.mCSB_container').html(elementDOM)
+    })
 
     $.post(listUrl, $.svgParams, function(json){
         // 生成模板列表

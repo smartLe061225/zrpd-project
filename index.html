@@ -45,7 +45,7 @@
                         <div class="StepForm">
                             <div class="items">
                                 <label class="label">企业简称：</label>
-                                <input class="ipt-text" type="text" placeholder="请填写企业简称（中文或英文）" name="name" datatype="*" valid="required" errortext="请填写企业简称">
+                                <input class="ipt-text js-input-name" type="text" placeholder="请填写企业简称（中文或英文）" name="name" datatype="*" valid="required" errortext="请填写企业简称">
                             </div>
                             <div class="items">
                                 <label class="label">副标：</label>
@@ -56,7 +56,9 @@
                                 <div class="Mselect form-select">
                                     <p class="Mchecked">请选择所属行业</p>
                                     <input type="hidden" name="trade" />
-                                    <div class="MoptionBox MScroll js-ajax-trade"></div>
+                                    <div class="MoptionBox MScroll js-ajax-trade">
+                                    	<span class="Moption" value="B">采矿业</span>
+                                    </div>
                                 </div>
                             </div>
                         </div> <!-- StepForm end -->
@@ -90,7 +92,7 @@
                                 <div class="Mselect filter-select">
                                     <p class="Mchecked">请选择形状</p>
                                     <input class="J-filter-select" type="hidden" name="shape" />
-                                    <div class="MoptionBox MScroll">
+                                    <div class="MoptionBox MScroll js-ajax-shape">
                                         <span class="Moption" value="正方形">正方形</span>
                                         <span class="Moption" value="圆形">圆形</span>
                                         <span class="Moption" value="三角形">三角形</span>
@@ -100,7 +102,7 @@
                                 <div class="Mselect filter-select">
                                     <p class="Mchecked J-filter-select">请选择字母</p>
                                     <input class="J-filter-select" type="hidden" name="alpha" />
-                                    <div class="MoptionBox MScroll">
+                                    <div class="MoptionBox MScroll js-ajax-alpha">
                                         <span class="Moption" value="A">A</span>
                                         <span class="Moption" value="B">B</span>
                                         <span class="Moption" value="C">C</span>
@@ -132,7 +134,7 @@
                                 <div class="Mselect filter-select">
                                     <p class="Mchecked">请选择数字</p>
                                     <input class="J-filter-select" type="hidden" name="numeric" />
-                                    <div class="MoptionBox MScroll">
+                                    <div class="MoptionBox MScroll js-ajax-numeric">
                                         <span class="Moption" value="1">1</span>
                                         <span class="Moption" value="2">2</span>
                                         <span class="Moption" value="3">3</span>
@@ -147,7 +149,7 @@
                                 <div class="Mselect filter-select">
                                     <p class="Mchecked">请选择元素</p>
                                     <input class="J-filter-select" type="hidden" name="element" />
-                                    <div class="MoptionBox MScroll">
+                                    <div class="MoptionBox MScroll js-ajax-element">
                                         <span class="Moption" value="合作共赢">合作共赢</span>
                                         <span class="Moption" value="热情阳光">热情阳光</span>
                                         <span class="Moption" value="精工科技">精工科技</span>
@@ -395,7 +397,7 @@
 <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://www.logofree.cn/assets/js/seajs/sea.js"></script>
 <script src="js/Mbase.js"></script>
-<script src="js/config.js"></script>
+<script src="js/config.js?v=6.0"></script>
 <script type="text/javascript" src="./js/plugin/svg/svg.min.js"></script>
 <script type="text/javascript" src="./js/plugin/svg/svg.draggable.min.js"></script>
 <script type="text/javascript" src="./js/plugin/opentype/opentype.min.js"></script>
