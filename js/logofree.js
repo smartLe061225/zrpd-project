@@ -114,6 +114,16 @@ $.loadMaterial = function(){
         $('.js-ajax-alpha').find('.mCSB_container').html(alphaDOM)
         $('.js-ajax-numeric').find('.mCSB_container').html(numericDOM)
         $('.js-ajax-element').find('.mCSB_container').html(elementDOM)
+        // feature - 第二步：当筛选条件改变时，触发
+	    $('.Filter .Moption').off('click').on('click', function(){
+	        console.log('a')
+            $.svgParams.trade = $('[name=trade]').val();
+            $.svgParams.shape = $('.Filter [name=shape]').val();
+            $.svgParams.alpha = $('.Filter [name=alpha]').val();
+            $.svgParams.numeric = $('.Filter [name=numeric]').val();
+            $.svgParams.element = $('.Filter [name=element]').val();
+            $.loadMaterial();
+        });
     })
 
     // logo列表
@@ -160,16 +170,6 @@ $.loadMaterial = function(){
     });
 
     $('.js-refresh', _DOM).off('click').on('click', function(){
-        $.loadMaterial();
-    });
-
-    // feature - 第二步：当筛选条件改变时，触发
-    $('.Filter .Moption').off('click').on('click', function(){
-        $.svgParams.trade = $('[name=trade]').val();
-        $.svgParams.shape = $('.Filter [name=shape]').val();
-        $.svgParams.alpha = $('.Filter [name=alpha]').val();
-        $.svgParams.numeric = $('.Filter [name=numeric]').val();
-        $.svgParams.element = $('.Filter [name=element]').val();
         $.loadMaterial();
     });
 }
