@@ -116,12 +116,15 @@ $.loadMaterial = function(){
         $('.js-ajax-element').find('.mCSB_container').html(elementDOM)
     })
 
+    // logo列表
+    $.svgParams.pageSize = 5;
     $.post(listUrl, $.svgParams, function(json){
         // 生成模板列表
         $('.selectLogoList', _DOM).empty();
-        if (json.length) {
-            $(json).each(function(){
-                $('.selectLogoList', _DOM).append('<li data-id="'+this.id+'"><i class="icon-select"></i><img src="'+ BaseUrl + '/openapi/logo/materialPreview?material_id='+this.id+'&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text +'" alt=""></li>')
+        var result = JSON.parse(json).data;
+        if (result.length) {
+            $(result).each(function(){
+                $('.selectLogoList', _DOM).append('<li data-id="'+this.id+'"><i class="icon-select"></i><img src="'+ this.imgPath +'" alt=""></li>')
             });
         } else {
             $('.selectLogoList', _DOM).html('<div class="notfound">暂无相关图形</div>');
@@ -161,7 +164,7 @@ $.loadMaterial = function(){
 
     // feature - 第二步：当筛选条件改变时，触发
     $('.Filter .Moption').off('click').on('click', function(){
-        $.svgParams.trade = $('.Filter [name=trade]').val();
+        $.svgParams.trade = $('[name=trade]').val();
         $.svgParams.shape = $('.Filter [name=shape]').val();
         $.svgParams.alpha = $('.Filter [name=alpha]').val();
         $.svgParams.numeric = $('.Filter [name=numeric]').val();
