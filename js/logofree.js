@@ -28,21 +28,42 @@ $.loadForm = function(){
 
     var checkFormObj = $('.js-logo-form');
     checkFormObj.off('submit').on('submit', function(){
-        seajs.use(['/js/plugin/validform/Validform_v5.3.2_min.js'], function(){
-            $('.js-logo-form').Validform({
-                callback: function(){
-                    $.svgParams = {
-                        name: {text:$('[name=name]').val()},
-                        slogan: {text:$('[name=slogan]').val()},
-                        trade: $('[name=trade]').val(),
-                        atext: {text:''}
-                    }
-                    $.loadMaterial();
-                }
-            })
-        });
+    	var inputName = $('.js-input-name')
+        if (inputName.val()) {
+            $.svgParams = {
+                name: {text:$('[name=name]').val()},
+                slogan: {text:$('[name=slogan]').val()},
+                trade: $('[name=trade]').val(),
+                atext: {text:''}
+            }
+            $.loadMaterial();
+            inputName.removeClass('Validform_error')
+        }else{
+            inputName.focus().addClass('Validform_error')
+    	}
+        // seajs.use(['/js/plugin/validform/Validform_v5.3.2_min.js'], function(){
+        //     $('.js-logo-form').Validform({
+        //         callback: function(){
+        //             $.svgParams = {
+        //                 name: {text:$('[name=name]').val()},
+        //                 slogan: {text:$('[name=slogan]').val()},
+        //                 trade: $('[name=trade]').val(),
+        //                 atext: {text:''}
+        //             }
+        //             $.loadMaterial();
+        //         }
+        //     })
+        // });
         return false;
     });
+    $('.js-input-name').off('blur').on('blur',function(){
+    	var $this = $(this);
+    	if ($this.val()) {
+    		$this.removeClass('Validform_error')
+        }else{
+            $this.addClass('Validform_error')
+        }
+    })
 }
 
 // 第二步：展示模板
