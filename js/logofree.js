@@ -12,6 +12,20 @@ $.progress = function(step) {
 $.loadForm = function(){
     $.progress(1);
 
+    // load trade
+    $.post(ajaxTradeUrl, function(json){
+    	var result = JSON.parse(json).data;
+    	var html = '';
+    	if (result.length) {
+    		$(result).each(function(){
+                html += '<span class="Moption" value="'+ this.tradeCode +'">'+ this.tradeCategory +'</span>';
+            });
+    	}else{
+    		html = '暂无数据'
+    	}
+    	$('.js-ajax-trade').find('.mCSB_container').html(html)
+    })
+
     var checkFormObj = $('.js-logo-form');
     checkFormObj.off('submit').on('submit', function(){
         seajs.use(['/js/plugin/validform/Validform_v5.3.2_min.js'], function(){
