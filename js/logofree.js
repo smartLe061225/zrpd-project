@@ -124,7 +124,7 @@ $.loadMaterial = function(){
         var result = JSON.parse(json).data;
         if (result.length) {
             $(result).each(function(){
-                $('.selectLogoList', _DOM).append('<li data-id="'+this.id+'"><i class="icon-select"></i><img src="'+ this.imgPath +'" alt=""></li>')
+                $('.selectLogoList', _DOM).append('<li data-id="'+this.id+'"><i class="icon-select"></i><img src="'+ svgLogoUrl + '?material_id=' + this.id +'&name='+ $.svgParams.name.text +'&slogan='+ $.svgParams.slogan.text +'" alt=""></li>')
             });
         } else {
             $('.selectLogoList', _DOM).html('<div class="notfound">暂无相关图形</div>');
@@ -135,6 +135,7 @@ $.loadMaterial = function(){
             $(this).addClass('active').siblings('li').removeClass('active');
 
             $.svgParams.material_id = id;
+
             var url = BaseUrl + '/openapi/logo/materialPreview?material_id='+id+'&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text;
             $.post(logoTplUrl, {logourl: url}, function(html){
                 $('.logoApplicationList').html(html.tpl);
@@ -175,10 +176,11 @@ $.loadMaterial = function(){
 
 // 第三步：编辑Logo
 $.loadEditor = function(){
-    // if (!$.login()) {
-    //     return;
-    // }
+    if (!$.login()) {
+        return;
+    }
     $.post(svgUrl, $.svgParams, function(ret){
+    	console.log('a:'+ret)
         $('.js-svg-editor').html(ret.svg);
         $.svgEditor('svg-draw', $.svgParams);
 
@@ -211,6 +213,33 @@ $.checkout = function(svg){
         });
 
     }, 'json');
+}
+
+// login check
+$.login = function() {
+	var a
+	$.post('http://192.168.1.112:8080/logo/checkLogin',function(res){
+		a = res;
+	})
+    // return a ? !0 : ($.get("/openapi/passport/fast_login", function(a) {
+    //     $("body").append(a),
+    //     $(".nav-line li").on("click", function() {
+    //         switch ($(this).siblings().removeClass("active"), $(this).addClass("active"), $(this).index()) {
+    //         case 0:
+    //             $(".form-register").hide(),
+    //             $(".form-login").show();
+    //             break;
+    //         case 1:
+    //             $(".form-register").show(),
+    //             $(".form-login").hide()
+    //         }
+    //     }),
+    //     $.bindLoginForm(".sep-fast-passport .form-login"),
+    //     $.bindRegisterForm(".sep-fast-passport .form-register"),
+    //     $(".sep-fast-passport-close").on("click", function() {
+    //         $(".sep-fast-passport").remove()
+    //     })
+    // }), !1)
 }
 
 $(function(){
