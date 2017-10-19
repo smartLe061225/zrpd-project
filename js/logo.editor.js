@@ -18,8 +18,7 @@ $.svgEditor = function(a, b) {
         b.ghost || (b.ghost = b.svg.group().id("svg-ghost")),
         b.ghost.clear(),
         b.cur = "",
-        b.svg.select(".svg-element").style("cursor", "pointer").off("click").on("click",
-        function(a) {
+        b.svg.select(".svg-element").style("cursor", "pointer").off("click").on("click", function(a) {
             c.selected(this),
             a.stopPropagation()
         });
@@ -50,6 +49,7 @@ $.svgEditor = function(a, b) {
                 })
             }
         }),
+        $(".js-svg-layout li").removeClass('active').eq(0).addClass('active'),
         $(".js-svg-layout li").off("click").on("click", function() {
             $(this).addClass('active').siblings().removeClass('active');
             var a = $(this).data("id");
@@ -64,8 +64,7 @@ $.svgEditor = function(a, b) {
             c.setText(b)
         }),
         $(".js-svg-slogan").val(b.data.slogan.text),
-        $(".js-svg-slogan-btn").off("click").on("click",
-        function() {
+        $(".js-svg-slogan-btn").off("click").on("click", function() {
             var a = $(".js-svg-slogan").val();
             b.data.slogan.text = a,
             b.ghost.clear(),
@@ -204,8 +203,7 @@ $.svgEditor = function(a, b) {
             $(".picker-color-box").remove();
             var e = this,
             f = $(this).data("bg");
-            c.bindColorPicker($(this).parent(), f,
-            function(c, g, h) {
+            c.bindColorPicker($(this).parent(), f, function(c, g, h) {
                 var i = new RegExp(f, "g");
                 d = d.replace(i, c),
                 f = c,
@@ -250,8 +248,7 @@ $.svgEditor = function(a, b) {
             e.y = d,
             e
         }),
-        b.ghost.off("dragend.namespace").on("dragend.namespace",
-        function(a) {
+        b.ghost.off("dragend.namespace").on("dragend.namespace", function(a) {
             c.selected(b.el)
         }),
         c.resize(b.ghost),
@@ -315,8 +312,7 @@ $.svgEditor = function(a, b) {
             return h.x = a,
             h.y = d,
             h
-        }).off("dragend.namespace").on("dragend.namespace",
-        function(a) {
+        }).off("dragend.namespace").on("dragend.namespace", function(a) {
             c.selected(b.el)
         })
     },
