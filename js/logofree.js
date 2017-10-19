@@ -116,7 +116,6 @@ $.loadMaterial = function(){
         $('.js-ajax-element').find('.mCSB_container').html(elementDOM)
         // feature - 第二步：当筛选条件改变时，触发
 	    $('.Filter .Moption').off('click').on('click', function(){
-	        console.log('a')
             $.svgParams.trade = $('[name=trade]').val();
             $.svgParams.shape = $('.Filter [name=shape]').val();
             $.svgParams.alpha = $('.Filter [name=alpha]').val();
@@ -147,8 +146,17 @@ $.loadMaterial = function(){
             $.svgParams.material_id = id;
 
             var url = BaseUrl + '/openapi/logo/materialPreview?material_id='+id+'&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text;
-            $.post(logoTplUrl, {logourl: url}, function(html){
-                $('.logoApplicationList').html(html.tpl);
+            $.post(svgViUrl, $.svgParams, function(html){
+            	var result = html.data;
+            	var tpl = '';
+            	if (result.length) {
+            		$(result).each(function(){
+            			tpl += this.img_path
+            		})
+            	}else{
+            		tpl = "sorry..."
+            	}
+                $('.logoApplicationList').html(tpl);
             });
         });
     },'json');
@@ -176,12 +184,11 @@ $.loadMaterial = function(){
 
 // 第三步：编辑Logo
 $.loadEditor = function(){
-    if (!$.login()) {
-        return;
-    }
+    // if (!$.login()) {
+    //     return;
+    // }
     $.post(svgUrl, $.svgParams, function(ret){
-    	console.log('a:'+ret)
-        $('.js-svg-editor').html(ret.svg);
+        $('.js-svg-editor').html(ret);
         $.svgEditor('svg-draw', $.svgParams);
 
         $('.js-checkout-logo').off('click').on('click', function(){
