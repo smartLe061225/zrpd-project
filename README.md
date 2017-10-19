@@ -2,6 +2,7 @@
 
 ## 素材上传
 * 后台上传 `svg` 图片，并 **保存图片地址**，同时 **提取svg图形代码**
+
 |   id   |   url               |   svg  |
 |--------|---------------------|--------|
 |    1   | /uploads/logo/1.svg |   ...  |
@@ -58,6 +59,34 @@
 	</g>
 </svg>
  ```
+
+## UI细节
+* logo素材尺寸
+>为了保证logo图标与整体视觉上的和谐，请上传人员保证svg的尺寸画板为: `200px * 200px`.
+
+ * 不和谐（左：200px，右：100px）
+ ![svg logo size](readme/svg-size.png)
+
+ * 和谐之美(200px)
+ ![svg logo size 200](readme/svg-size-200.png)
+
+## AI技能
+* 批量导出
+`文件` -> `导出` -> `导出为多种屏幕所有格式`
+
+ ![output](readme/readme-output.png)
+
+* 改变画板尺寸
+ * `工具栏` -> `画板工具(shift+o)`
+
+ ![ai tools bar](readme/ai-tools.png)
+
+ * 设置画板尺寸
+ ![ai size](readme/ai-tools-size.png)
+ 
+ * 对内容进行缩放
+ `变换` -> `缩放`
+ ![ai resize](readme/ai-resize.png)
 
 
 ***
