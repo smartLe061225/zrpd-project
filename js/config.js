@@ -1,8 +1,15 @@
-var BaseUrl = "http://www.logofree.cn"
-// var listUrl = "http://192.168.200.140:8080/logo/queryForLogoList"
-// var listUrl = "http://www.logofree.cn/openapi/logo/material"
-var listUrl = "/data/list.json"
-var logoTplUrl = "/data/logo.json"
-var defaultLogoTplUrl = "/data/logodefault.json"
-var svgUrl = "/data/svg.json"
-var checkoutUrl = "/data/checkout.json"
+var BaseUrl = "http://4xmwcj.natappfree.cc"
+// logo列表显示
+var listUrl = BaseUrl + "/logo/queryForLogoList"
+
+// svg logo第二步接口
+var svgLogoUrl = BaseUrl + "/logo/api/getSvgLogo"
+var svgViUrl = BaseUrl + "/logo/getTempsByLogoId"
+// svg log0 第三步接口
+var svgUrl = BaseUrl + "/logo/api/getSvgEditorLogo"
+var resultLogoUrl = "http://192.168.1.112:8080/logo/api/editLogo"
+
+var checkLoginUrl = BaseUrl + "/logo/checkLogin"
+
+var ajaxTradeUrl = BaseUrl + "/logo/ajaxTradeList"
+var ajaxFilterUrl = BaseUrl + "/logo/ajaxLogoType"
