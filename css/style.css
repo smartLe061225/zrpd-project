@@ -34,7 +34,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .hidden{
 	display: none!important;
 }
-
+.h172{
+	height: 172px;
+}
 /*下拉框样式*/
 body .mCSB_inside > .mCSB_container { margin-right: 0; }
 body .mCSB_container_wrapper { margin-right: 20px; margin-bottom: 20px; }
@@ -67,6 +69,8 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 
 /* common style */
 .Top{
+	position: relative;
+	z-index: 3;
 	height: 79px;
 	width: 100%;
 	min-width: 1200px;
@@ -106,9 +110,30 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	vertical-align: middle;
 	margin-left: 5px;
 }
-.nav .sub:hover{
+.nav .sub:hover,.nav .sub.active{
 	color: #17e;
 	border-bottom: 2px solid #17e;
+}
+.navMenu{
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	min-width: 1200px;
+	background: #fff;
+	box-shadow: 0 10px 36px rgba(0, 0, 0, .1);
+	margin-top: -278px;
+}
+
+.navMenu .projectList li i{
+	border-color: #d8dadd;
+}
+.navMenu .projectList li a:hover{
+	color: #eff7fe;
+}
+.navMenu .projectList li a:hover i{
+	color: #eff7fe;
+	background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#64BDFF), to(#4498E2));
+	border-color: #64BDFF;
 }
 /* tools */
 .tools{
@@ -130,6 +155,7 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 }
 
 .Main{
+	position: relative;
 	background: #f6f6f6;
 	width: 100%;
 	min-width: 1200px;
@@ -253,7 +279,6 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 
 /* actionGroup */
 .actionGroup{
-	height: 200px;
 	padding-top: 48px;
 	text-align: center;
 }
@@ -267,6 +292,7 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 }
 .button{
 	height: 48px;
+	line-height: 48px;
 	font-size: 16px;
 	padding: 0 32px;
 	margin: 0 16px;
@@ -275,6 +301,7 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	cursor: pointer;
 }
 .block-button{
+	position: relative;
 	margin-right: 20px;
 }
 .block-button i{
@@ -297,6 +324,9 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 .blue-button{
 	color: #fff;
 	background-image: linear-gradient(#3399ff, #1177ee);
+}
+.blue-button:hover{
+	color: #fff;
 }
 .green-button{
 	background-image: linear-gradient(#6fdfa4,#64ca94);
@@ -375,11 +405,12 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	border: 1px solid #545860;
 	border-radius: 50%;
 	text-align: center;
-	color: #839893;
-	background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#838993), to(#9CA3AF));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	color: #8a909a;
+	/* background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#838993), to(#9CA3AF));
+	    -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent; */
     display: block;
+    transition : all 0.2s linear 0s
 }
 .projectList li .text{
 	font-size: 14px;
@@ -392,6 +423,10 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	-ms-text-overflow: ellipsis;
 	text-overflow: ellipsis;
 	display: inline-block;
+}
+.projectList li a:hover i{
+	background: #8a909a;
+	color: #3a3d43;
 }
 /* copyright */
 .copyright{
@@ -643,12 +678,16 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	cursor: pointer;
 }
 /* Step2 */
-.Step2{}
+.Step2{
+	display: none;
+}
 .Step2 .radiusBlock{
 	padding: 40px 60px;
 }
 
-
+.Step3{
+	display: none;
+}
 .editorLeft{
 	background: #fff;
 	padding: 52px;
@@ -682,6 +721,9 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 }
 
 /* Step4 */
+.Step4{
+	display: none;
+}
 .Step4 .radiusBlock{
 	padding: 50px;
 }
@@ -693,7 +735,55 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
     border: 12px solid #ddd;
     background: #f9f9f9 url(http://www.logofree.cn/themes/logofree/img/grid.svg);
 }
-
+.vi-preview{
+	position: relative;
+	width: 1100px;
+	height: 500px;
+	background: #dadde5 url('../images/demo-vi.jpg') center no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	overflow: hidden;
+}
+.vi-preview .logo-show1{
+	position: absolute;
+	top: 116px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+	transform: skew(35deg,-30deg);
+}
+.vi-preview .logo-show2{
+	position: absolute;
+	top: 267px;
+    left: 146px;
+    width: 68px;
+    height: 68px;
+    transform: skew(35deg,-30deg);
+}
+.vi-preview .logo-show3{
+	position: absolute;
+	top: 154px;
+    left: 348px;
+    width: 62px;
+    height: 62px;
+    transform: skew(35deg,-30deg);
+}
+.vi-preview .logo-show4{
+	position: absolute;
+	top: 132px;
+    left: 628px;
+    width: 126px;
+    height: 126px;
+    transform: skew(39deg,-31deg);
+}
+.vi-preview .logo-show5{
+	position: absolute;
+	top: 360px;
+    left: 794px;
+    width: 82px;
+    height: 82px;
+    transform: skew(38deg,-33deg);
+}
 .design-type{
 	width: 666px;
 	font-size: 14px;
@@ -744,6 +834,59 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	line-height: 24px;''
 	color: #666;
 	margin-bottom: 14px;
+}
+
+/* downloadMenu */
+.downloadMenu{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	padding-top: 12px;	
+	display: none;
+}
+.downloadMenu:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    margin-left: -5px;
+}
+.downloadMenu:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-bottom-color: #ccc;
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    margin-left: -7px;
+}
+.downloadMenu ul{
+	padding: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+.downloadMenu li{
+	font-size: 14px;
+	line-height: 36px;
+	text-align: center;
+	cursor: pointer;
+}
+.downloadMenu li:hover{
+	background: #f6f6f6;
+}
+.hoverShowMenu:hover .downloadMenu{
+	display: block;
 }
 
 /* Validform_wrong */

@@ -70,6 +70,7 @@ $.loadForm = function(){
 $.loadMaterial = function(){
     var _DOM = '.js-filter-logo';
     $.progress(2);
+    $('.selectLogoList', _DOM).empty()
 
     // 筛选条件
     $.post(ajaxFilterUrl, function(json){
@@ -135,6 +136,7 @@ $.loadMaterial = function(){
             $(result).each(function(){
                 $('.selectLogoList', _DOM).append('<li data-id="'+this.id+'"><i class="icon-select"></i><img src="'+ svgLogoUrl + '?material_id=' + this.id +'&name='+ $.svgParams.name.text +'&slogan='+ $.svgParams.slogan.text +'" alt=""></li>')
             });
+            //$('.selectLogoList li').eq(0).trigger('click');
         } else {
             $('.selectLogoList', _DOM).html('<div class="notfound">暂无相关图形</div>');
         }
@@ -145,8 +147,8 @@ $.loadMaterial = function(){
 
             $.svgParams.material_id = id;
 
-            var url = BaseUrl + '/openapi/logo/materialPreview?material_id='+id+'&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text;
-            $.post(svgViUrl, $.svgParams, function(html){
+            var url = svgLogoUrl + '?material_id='+id+'&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text;
+            $.post(svgViUrl, {logoUrl: url, logoId: id}, function(html){
             	var result = html.data;
             	var tpl = '';
             	if (result.length) {
@@ -162,8 +164,8 @@ $.loadMaterial = function(){
     },'json');
 
     // 默认VI图
-    var url = BaseUrl + '/openapi/logo/materialPreview?material_id=378&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text;
-    $.post(defaultLogoTplUrl, {logourl: url}, function(html){
+    var url = svgLogoUrl + '?material_id=888&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text;
+    $.post(svgViUrl, {logourl: url, logoId: 888}, function(html){
         $('.logoApplicationList').html(html.tpl);
     });
 
@@ -207,19 +209,42 @@ $.checkout = function(svg){
     window.stop();
     $.progress(4);
     $.svgParams.svg = svg;
-    $.post(checkoutUrl, $.svgParams, function(json){
-        $('.js-svg-preview').html(json.svg);
-        $.svgParams.svg = json.svg;
+    $.ajax({
+        type: 'POST',
+        url: resultLogoUrl,
+        headers:{"Content-Type":"application/json;charset=UTF-8"},
+        data:JSON.stringify($.svgParams),
+        success: function(json){
 
-        $('.js-free-download').off('click').on('click', function(){
-            $.save($.svgParams);
-        });
+            var data = JSON.parse(json),
+            	result = data.aiLogo,
+            	svgResult = data.svg;
+            	$.svgParams.svg = svgResult;
+			
+			$('.js-svg-preview').html(svgResult);
+            $('.js-download-png').attr({'href':result.imgPath})
+            $('.js-download-svg').attr({'href':result.svgPath})
+            console.log('png:'+result.imgPath)
 
-        $('.js-logo-order').off('click').on('click', function(){
-            $.placeOrder($.svgParams);
-        });
+            // $('.js-free-download').off('click').on('click', function(){
+            //     $.save($.svgParams);
+            // });
 
-    }, 'json');
+            // $('.js-logo-order').off('click').on('click', function(){
+            //     $.placeOrder($.svgParams);
+            // });
+
+            var src1 = svgResult;
+            var src2 = src1.replace(/\#[0-9a-fA-F]{3,6}/g, '#000000');
+            $('.js-vi-preview').empty();
+            $('.js-vi-preview').append('<div class="logo-show1">'+src2+'</div>');
+            $('.js-vi-preview').append('<div class="logo-show2">'+src1+'</div>');
+            $('.js-vi-preview').append('<div class="logo-show3">'+src1+'</div>');
+            $('.js-vi-preview').append('<div class="logo-show4">'+src2+'</div>');
+            $('.js-vi-preview').append('<div class="logo-show5">'+src1+'</div>');
+        }
+    })
+
 }
 
 // login check
@@ -228,25 +253,6 @@ $.login = function() {
 	$.post('http://192.168.1.112:8080/logo/checkLogin',function(res){
 		a = res;
 	})
-    // return a ? !0 : ($.get("/openapi/passport/fast_login", function(a) {
-    //     $("body").append(a),
-    //     $(".nav-line li").on("click", function() {
-    //         switch ($(this).siblings().removeClass("active"), $(this).addClass("active"), $(this).index()) {
-    //         case 0:
-    //             $(".form-register").hide(),
-    //             $(".form-login").show();
-    //             break;
-    //         case 1:
-    //             $(".form-register").show(),
-    //             $(".form-login").hide()
-    //         }
-    //     }),
-    //     $.bindLoginForm(".sep-fast-passport .form-login"),
-    //     $.bindRegisterForm(".sep-fast-passport .form-register"),
-    //     $(".sep-fast-passport-close").on("click", function() {
-    //         $(".sep-fast-passport").remove()
-    //     })
-    // }), !1)
 }
 
 $(function(){
