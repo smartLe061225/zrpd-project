@@ -1,4 +1,4 @@
-var BaseUrl = "http://4xmwcj.natappfree.cc"
+var BaseUrl = "http://192.168.1.112:8080"
 // logo列表显示
 var listUrl = BaseUrl + "/logo/queryForLogoList"
 
@@ -8,8 +8,15 @@ var svgViUrl = BaseUrl + "/logo/getTempsByLogoId"
 // svg log0 第三步接口
 var svgUrl = BaseUrl + "/logo/api/getSvgEditorLogo"
 var resultLogoUrl = "http://192.168.1.112:8080/logo/api/editLogo"
+// save
+var saveUrl = BaseUrl + "/logo/api/saveLogo"
 
 var checkLoginUrl = BaseUrl + "/logo/checkLogin"
 
 var ajaxTradeUrl = BaseUrl + "/logo/ajaxTradeList"
 var ajaxFilterUrl = BaseUrl + "/logo/ajaxLogoType"
+
+var uploadPicUrl = BaseUrl + "/logo/uploadPic"
+var saveUploadLogo = BaseUrl + "/logo/saveUploadLogo"
+
+var getLoginTpl = '/login.html'

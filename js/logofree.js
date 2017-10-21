@@ -186,9 +186,9 @@ $.loadMaterial = function(){
 
 // 第三步：编辑Logo
 $.loadEditor = function(){
-    // if (!$.login()) {
-    //     return;
-    // }
+    if (!$.login()) {
+        return;
+    }
     $.post(svgUrl, $.svgParams, function(ret){
         $('.js-svg-editor').html(ret);
         $.svgEditor('svg-draw', $.svgParams);
@@ -224,15 +224,11 @@ $.checkout = function(svg){
 			$('.js-svg-preview').html(svgResult);
             $('.js-download-png').attr({'href':result.imgPath})
             $('.js-download-svg').attr({'href':result.svgPath})
-            console.log('png:'+result.imgPath)
 
-            // $('.js-free-download').off('click').on('click', function(){
-            //     $.save($.svgParams);
-            // });
-
-            // $('.js-logo-order').off('click').on('click', function(){
-            //     $.placeOrder($.svgParams);
-            // });
+            $('.js-logo-save').off('click').on('click', function(){
+                $.save($.svgParams.material_id);
+                console.log('id:'+$.svgParams.material_id)
+            });
 
             var src1 = svgResult;
             var src2 = src1.replace(/\#[0-9a-fA-F]{3,6}/g, '#000000');
@@ -247,11 +243,21 @@ $.checkout = function(svg){
 
 }
 
+$.save = function(id){
+	$.post(saveUrl, {'logoId': id}, function(res){
+		if (res) {
+			window.href = "/goods"
+		}else{
+			alert('保存失败！')
+		}
+	})
+}
 // login check
 $.login = function() {
-	var a
-	$.post('http://192.168.1.112:8080/logo/checkLogin',function(res){
-		a = res;
+	$.post('http://192.168.1.112:8080/logo/checkLogin', function(res){
+		return (res=='1') ? !0 : ($.get(getLoginTpl, function(html){
+			$('body').append(html)
+		}), !1)
 	})
 }
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <title>魔词IP</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fonts.css?v=00">
 </head>
 <body>
     <div class="Top">
@@ -40,16 +40,20 @@
         <div class="StepNav">
             <div class="w">
                 <h2 class="title">Logo定制</h2>
-                <ul class="js-step-bar stepList step1">
-                    <li><span class="icon"><i class="icon-step1"></i></span><span class="text">公司名称</span></li>
-                    <li><span class="icon"><i class="icon-step2"></i></span><span class="text">选择图形</span></li>
-                    <li><span class="icon"><i class="icon-step3"></i></span><span class="text">编辑Logo</span></li>
-                    <li><span class="icon"><i class="icon-step4"></i></span><span class="text">完成设计</span></li>
+                <ul class="js-tab selectTab">
+                    <li class="active">全新定制</li>
+                    <li>Logo上传</li>
                 </ul>
             </div>
         </div> <!-- StepNav end -->
 
         <div class="w">
+            <ul class="js-step-bar stepList step1">
+                <li><span class="icon"><i class="icon-step1"></i></span><span class="text">公司名称</span></li>
+                <li><span class="icon"><i class="icon-step2"></i></span><span class="text">选择图形</span></li>
+                <li><span class="icon"><i class="icon-step3"></i></span><span class="text">编辑Logo</span></li>
+                <li><span class="icon"><i class="icon-step4"></i></span><span class="text">完成设计</span></li>
+            </ul>
             <div class="StepContent">
                 <div class="rel Step1 js-step1">
                 <form method="post" class="js-logo-form">
@@ -58,7 +62,7 @@
                         <div class="StepForm">
                             <div class="items">
                                 <label class="label">企业简称：</label>
-                                <input class="ipt-text js-input-name" type="text" placeholder="请填写企业简称（中文或英文）" name="name" datatype="*" valid="required" errortext="请填写企业简称">
+                                <input class="ipt-text js-input-name" type="text" placeholder="请填写企业简称（中文或英文）" name="name" errortext="请填写企业简称">
                             </div>
                             <div class="items">
                                 <label class="label">副标：</label>
@@ -362,7 +366,7 @@
                                 <h5 class="tips-title">下载Logo文件：</h5>
                                 <div class="clearfix h172">
                                     <div class="fl block-button hoverShowMenu">
-                                        <button class="Button green-button js-free-download" type="button"><i class="icon-download"></i>下载</button>
+                                        <button class="Button green-button" type="button"><i class="icon-download"></i>下载</button>
                                         <div class="downloadMenu">
                                             <ul>
                                                 <li><a class="js-download-png" href="" download>下载PNG</a></li>
@@ -372,7 +376,7 @@
                                         <!-- <span class="text">像素较低的Logo小样</span> -->
                                     </div>
                                     <div class="fl block-button">
-                                        <button class="Button orange-button" type="button"><i class="icon-save"></i>保存</button>
+                                        <button class="Button orange-button js-logo-save" type="button"><i class="icon-save"></i>保存</button>
                                         <!-- <span class="text">用于印刷品、屏幕、广告的矢量源文件</span> -->
                                     </div>
                                 </div>
@@ -407,7 +411,7 @@
                     </div>
                 </div> <!-- Step4 end -->
 
-            </div>
+            </div> <!-- StepContent end -->
         </div>
 
     </div> <!-- Main end -->
@@ -432,7 +436,6 @@
     </div> <!-- Footer end -->
 <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/nav.js"></script>
-
 <!-- logo script -->
 <script src="https://cdn.bootcss.com/seajs/2.1.1/sea.js"></script>
 <script src="js/Mbase.js"></script>
@@ -441,7 +444,7 @@
 <script type="text/javascript" src="./js/plugin/svg/svg.draggable.min.js"></script>
 <script type="text/javascript" src="./js/plugin/opentype/opentype.min.js"></script>
 <script type="text/javascript" src="./js/logo.editor.js"></script>
-<script src="js/logofree.js"></script>
+<script src="js/logofree.js?v=9.00"></script>
 <!-- logo script end -->
 </body>
 </html>

@@ -15,8 +15,8 @@ i{ font-style: normal;}
 .rel{position: relative;}.abs{position: absolute;}.fl{float: left;}.fr{float: right;}
 .w{width: 1200px;min-width:1200px;margin: 0 auto;position: relative;}
 a{color: #9ca3af;}a:hover{transition : color 0.2s linear 0s,background-color 0.3 linear 0s;color: #1177ee;}
-.clearfix:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
-.clearfix{*zoom:1;}
+.clearfix:after,.items:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
+.clearfix,.items{*zoom:1;}
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block;}
 .p36-52{
 	padding: 36px 0 52px;
@@ -172,11 +172,35 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	margin-bottom: 24px;
 	color: #797f8c;
 }
+.selectTab{
+	font-size: 0;
+	text-align: center;
+}
+.selectTab li{
+	display: inline-block;
+	margin: 0 10px;
+	height: 40px;
+	font-size: 14px;
+	line-height: 40px;
+	border-radius: 3px;
+	border: 1px solid #cfd4e2;
+	text-align: center;
+	color: #797f8c;
+	padding: 0 32px;
+	cursor: pointer;
+}
+.selectTab li:hover,
+.selectTab li.active{
+	color: #17e;
+	border-color: #39e;
+}
+
 /* stepList */
 .stepList{
 	position: relative;
 	font-size: 0;
 	text-align: center;
+	margin-bottom: 32px;
 }
 .stepList:after,
 .stepList:before{
@@ -465,7 +489,6 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 }
 .StepForm .items{
 	margin-bottom: 14px;
-	height: 42px;
 }
 .StepForm .label{
 	font-size: 14px;
@@ -476,7 +499,7 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	padding-right: 8px;
 	text-align: right;
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 }
 .StepForm .ipt-text{
 	height: 42px;
@@ -900,6 +923,70 @@ body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	color: #c00;
 }
 
+/* uploadController */
+.fileController{
+	width: 500px;
+	display: inline-block;
+}
+.fileController .text{
+	font-size: 14px;
+	line-height: 22px;
+	color: #999;
+	width: 400px;
+	margin: 8px auto 0;
+}
+.fileController .error{
+	color: #c00;
+}
+.uploadController{
+	position: relative;
+	width: 400px;
+	height: 300px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.uploadController .logo-show{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+.better-upload-file{
+	position: relative;
+	width: 180px;
+	height: 64px;
+	line-height: 64px;
+	border-radius: 3px;
+	background-image: -webkit-linear-gradient(90deg, #3399ff 0%, #1177ee 100%);
+	cursor: pointer;
+	font-size: 18px;
+	text-align: center;
+	color: #fff;
+}
+.better-upload-file i{
+	margin-right: 5px;
+}
+.better-upload-file input[type='file']{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	cursor: pointer;
+}
+.uploadController .better-upload-file{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%)
+}
 /* ============== */
 /* CHECKBOX TYPE */
 /* ============= */
