@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/login-tpl.css">
+</head>
+<body>
+	
+</body>
+</html>
+
+
+<!--登陆弹框-->
+<div class="mask_none js-tpl-login-box" style="display:block;">
+	<div class="mask_tenper"></div>
+	<div class="box_all land_box land2_box">
+		<form method="post" id="form_login">
+			<input type="hidden" name="toUrl" value=""/>
+			<input type="hidden" id="autoLandOn" name="autoLandOn" value="0"/>
+			<h2 class="clearfix">
+				<div class="fl land_titl">
+					<h3>用户登录</h3>
+				</div>
+				<div class="fr land_titr" onclick="colseLoginBox();"></div>
+			</h2>
+			<p class="land_wordp0" id="userName_prompt_2"></p>
+			<div class="land_phone land_word">
+				<input type="text" class="land_worinp land_worinp1" id="userName_" name="userName" value="" />
+				<div class="land_wordiv1">用户名或手机号码</div>
+				<div class="land_wordiv2">用户名或手机号码</div>
+				<p class="land_wordp1" id="userName_prompt_"></p>
+			</div>
+			<div class="land_pass land_word">
+				<input type="password" class="land_worinp land_worinp2" id="password_" value="" />
+				<input type="hidden" class="land_worinp land_worinp2" id="password2" name="password2222" value="" />
+				<div class="land_wordiv1">密码</div>
+				<div class="land_wordiv2">密码</div>
+				<p class="land_wordp2" id="password_prompt_"></p>
+			</div>
+			<div class="land_forget clearfix">
+				<span class="fl">自动登录</span> 
+				<a class="fr" href="javascript:rewardForgetPwd();">忘记密码</a>
+			</div>
+			<div class="land_btn" onclick="submitLoginForm();">登录</div>
+		</form>
+		<input type="hidden" id="loginError" value=""/>
+		<input type="hidden" id="hid_modulus" value=""/>
+		<input type="hidden" id="hid_exponent" value=""/>
+		<input type="hidden" id="hid_token" value=""/>
+	</div>
+</div>
+<!--找回密码二弹框-->
+<div class="mask_none2" style="display:none;">
+	<div class="mask_tenper"></div>
+	<div class="box_all reg_box2">
+			<h2 class="reg_bh2 clearfix">
+				<span class="fl">找回密码</span>
+				<i class="fr" onclick="closeAuthenticationBox();"></i>
+			</h2>
+			<div class="reg_img" align="center">
+				<img src="../../../../images/reg_no2.png" />
+			</div>
+			<div class="reg_text clearfix">
+				<span class="reg_text_2 col1b88e3">身份验证</span>
+				<span class="reg_text_3">找回密码</span>
+			</div>
+			<div class="reg_inp" style="margin-top: 65px;">
+				<input type="text" name="phoneNum" id="phoneNum" placeholder="手机号码" value="" onblur="beforeSubmitValidate('p');"/>
+				<p class="reg_wordp1 rest_wordp1" id="phone_prompt"></p>
+			</div>
+			<div class="reg_inp reg_inp2 clearfix">
+				<input class="fl" id="code" name="code" placeholder="验证码" onblur="beforeSubmitValidate('c');"/>
+				<input type="button" value="获取验证码" class="fl rest_inp2_btn" id="buttonPhoneCode" onclick="getSMSCode(document.getElementById('phoneNum').value);"/>
+				<p class="fl reg_wordp1 rest_wordp1" id="code_prompt"></p>
+			</div>
+			<div class="reg_btn">
+				<input type="button" id="jumpRestButton" onclick="rewardResetPwd();" value="下一步"/>
+			</div>
+	</div>
+</div>	
+<!--找回密码二弹框-->
+
+<iframe id="iframeId" style="display: none;"></iframe>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	//登录表单提交
+function submitLoginForm(){
+	// 校验
+	if(!beforeSubmit_login()){
+		return;
+	}
+	// 加密
+	var pwd = $("#password_").val();
+	$("#password2").val(pwd);
+	
+	// 提交
+	var param = $("#form_login").serialize();
+	$.ajax({
+    	async: true,
+		type: "post",
+        url: "http://192.168.1.112:8080/user/login",
+        data: param,
+        dataType: "json",
+        success: function(data){
+    		if(data['error']!='' && data['error']!=undefined){
+    			$('#userName_prompt_2').text("用户名或密码错误！");
+    			$('#userName_prompt_2').show();
+    		}else{
+    			var dd = data.dd;
+    			var url = 'http://ciyun-bbs.infobigdata.com/?/account/sso/ajaxsso/?u='+dd;
+    			$('#iframeId').attr('src',url);
+    			$('.js-tpl-login-box').hide()
+    		}
+            return false;
+        }
+	});
+}
+
+//登录表单提前验证处理
+function beforeSubmit_login(){
+    if ($("#userName_").val() == '') {
+        $('#userName_prompt_').text("请输入用户名/手机号！");
+        $("#userName_").focus();
+        return false;
+    } else{
+    	$('#userName_prompt_').text("");
+    }
+    if ($("#password_").val() == '') {
+        $('#password_prompt_').text("请输入密码！");
+        $("#password_").focus();
+        return false;
+    }else{
+    	$('#password_prompt_').text("");
+    }
+    return true;
+}
+</script>
+
+<script type="text/javascript">
+$(function(){
+	//登录监听
+	$('#form_login input').keydown(function(event) {
+		if(event.keyCode == 13){
+			submit_loginForm_new();
+		}
+	});
+	//自动登录
+	$('.land_forget span').click(function(){
+		if($(this).is('.land_on')){
+			$(this).removeClass('land_on');
+			$("#autoLandOn").val(0);
+		}else{
+			$(this).addClass('land_on');
+			$("#autoLandOn").val(1);
+		}
+	});
+	//登陆
+	$('.land2').click(function(){
+		$('.box_all').hide();
+		$('.land2_box').show();
+	});
+	$('.land2_box .land_titr').click(function(){
+		$('.land2_box').hide();
+	});
+	$('.land2_box .land_word input').on('click',function(){
+		$('.land2_box .land_word .land_wordiv1').hide();
+	});
+	$('.land2_box .land_wordiv2').on('click',function(){
+		$(this).hide();
+		$(this).siblings('.land_worinp').focus();
+		$(this).siblings('.land_wordiv1').show();
+	});
+	$('.land2_box .land_worinp').on('focus',function(){
+		$(this).siblings('.land_wordiv1').show();
+		$(this).siblings('.land_wordiv2').hide();
+	});
+	
+	$('.land_worinp1').blur(function(){
+		if($('.land_worinp1').val()==''){
+			$('.land_phone .land_wordiv2').show();
+			$('.land_phone .land_wordiv1').hide();
+		}
+	});
+	$('.land_worinp2').blur(function(){
+		if($('.land_worinp2').val()==''){
+			$('.land_pass .land_wordiv2').show();
+			$('.land_pass .land_wordiv1').hide();
+		}
+	});
+	
+	if($('.land_worinp1').val()!=''){
+		$('.land_phone .land_wordiv2').hide();
+		$('.land_phone .land_wordiv1').show();
+	}
+	if($('.land_worinp2').val()!=''){
+		$('.land_pass .land_wordiv2').hide();
+		$('.land_pass .land_wordiv1').show();
+	}
+});
+</script>

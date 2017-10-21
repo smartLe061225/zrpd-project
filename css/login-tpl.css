@@ -1,0 +1,353 @@
+/* CSS basic */
+
+.mask_tenper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+    z-index: 999;
+}
+
+.land_box *{
+	box-sizing: content-box;
+}
+/*用户登录*/
+
+.land_img{
+	width:100%;
+	height:100%;
+	min-width:800px;
+	min-height:600px;
+	background:url(../images/back_land.png) no-repeat;
+	background-size:cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/back_land.png',sizingMethod='scale');
+}
+
+.land_box h2{
+	height:52px;
+}
+.land_titr{
+	width:44px;
+	height:52px;
+	background:url(../images/lock.png) no-repeat;
+}
+.land_titl h3{
+	font-size:16px;
+	margin-top:2px;
+	margin-bottom:15px;
+	color:#000;
+	font-weight:bold;
+}
+.land_titl p{
+	fong-size:12px;
+	color:red;
+}
+.land_word input{
+	width:448px;
+	height:43px;
+	border:1px solid #bdbdbf;
+	border-radius:3px;
+	padding-left:36px;
+	margin-top:25px;
+}
+.land_phone input{
+	background:url(../images/land_phone.png) 11px 14px no-repeat;
+}
+.land_pass input{
+	background:url(../images/land_pass.png) 11px 13px no-repeat;
+}
+.land_forget{
+	margin-top:18px;
+	font-size:12px;
+	color:#131313;
+}
+.land_forget span{
+	padding-left:20px;
+	background:url(../images/land_off.png) 0 center no-repeat;
+	cursor: pointer;
+}
+.land_forget .land_on{
+	background:url(../images/land_on.png) 0 center no-repeat;
+}
+.land_forget a{
+	color:#131313;
+}
+.land_btn{
+	font-size: 16px;
+	margin-top:20px;
+	margin-bottom:60px;
+	width:486px;
+	height:45px;
+	line-height:45px;
+	text-align:center;
+	background:#1c88e3;
+	border-radius:3px;
+	color:#fff;
+	cursor: pointer;
+}
+.land_head{
+    height:67px;
+}
+.land_head h1{
+	width:298px;
+	height:41px;
+	background:url(../images/logo.png) no-repeat;
+	margin:25px 0 0 18%;
+}
+.land_hr{
+	height:42px;
+	line-height:42px;
+	margin:25px 19% 0 0;
+}
+.land_hr a{
+	font-size:16px;
+	color:#fff;
+	height:42px;
+	padding:0 3px;
+}
+.land_hr a:hover{
+	text-decoration:none;
+}
+.land_hrbor{
+	border-bottom:1px solid #fff;
+}
+.land_hra1{
+	margin-right:56px;
+}
+
+/*登陆2_弹框*/
+.land_box {
+    width: 526px;
+    height: 321px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -171px 0 0 -266px;
+    background: #fff;
+    padding: 22px 23px 0;
+    z-index: 1000;
+}
+.land2_box{
+	height:initial;
+}
+.land2_box .land_titr{
+    width: 15px;
+    height: 16px;
+    background:url(../images/lnad2_colos.png) no-repeat;
+    cursor: pointer;
+}
+.land2_box .land_word input{
+	background:none;
+	padding-left:15px;
+	width:468px;
+}
+.land2_box .land_word p{
+	font-size:14px;
+	color:red;
+	margin-top:5px;
+	/*display:none;*/
+}
+.land_wordp0{
+	color: red;
+    font-size: 14px;
+    display:none;
+}
+.land2_box .land_word{
+	position:relative;
+}
+.land2_box .land_word .land_wordiv1{
+	background:#fff;
+	font-size:14px;
+	color:#bdbdbd;
+	position:absolute;
+	left:15px;
+	top:15px;
+	display:none;
+}
+.land2_box .land_btn{
+	margin-bottom:60px;
+}
+.land_wordiv2{
+	width:470px;
+	height:45px;
+	line-height:45px;
+	padding-left:15px;
+	position:absolute;
+	left:0;
+	top:25px;
+	color:#bdbdbd;
+}
+.land2_sel{
+	width:100px;
+	height:43px;
+	position: relative;
+}
+.land2_sel .headr_drop2{
+	width:139px;
+	padding:17px 0;
+	background:#313131;
+	position: absolute;
+	left:-19px;
+	top:57px;
+	display: none;
+	z-index:101;
+}
+.land2_sel li a{
+	float:none;
+	text-align:center;
+	line-height:48px;
+	cursor: pointer;
+	color:#fff;
+	font-size:14px;
+	padding:0;
+}
+.land2_sel li{
+	float:none;
+}
+.land2_sel li a:hover{
+    color: #6e6e6c;
+}
+.land2_sel div{
+	width:30px;
+	height:30px;
+	background:url(../images/head_portrait.png) no-repeat;
+	margin:6px auto 0;
+	cursor: pointer;
+}
+.land2_sel .headr_drop2 i{
+	display:block;
+	width:16px;
+	height:10px;
+	background:url(../images/pro_showup.png) no-repeat;
+	position:absolute;
+	left:61px;
+	top:-10px;
+}
+
+/*注册弹窗*/
+.reg_box4 {
+    background: #ececee;
+    width: 486px;
+    margin: -232px 0 0 -266px;
+    padding: 24px 23px 53px;
+    background: #fff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1000;
+}
+.reg_box{
+	background:#ececee;
+	width:622px;
+	margin:-246px 0 0 -334px;
+	padding:24px 23px 53px;
+	background:#fff;
+	position: fixed;
+	left:50%;
+	top:50%;
+	z-index:1000;
+}
+.reg_bh2 span{
+	font-size:16px;
+	color:#131313;
+	font-weight:bold;
+}
+.reg_bh2 i{
+	width:15px;
+	height:16px;
+	background:url(http://192.168.1.112:8080/images/colse3.png) no-repeat;
+	cursor: pointer;
+	margin-top:3px;
+}
+.reg_img{
+	margin-top:69px;
+}
+.reg_text .col1b88e3{
+	color:#1b88e3;
+}
+.reg_text{
+	margin-top:12px;
+}
+.reg_text span{
+	float:left;
+	font-size:14px;
+	color:#b1b1b1;
+}
+.reg_text_1{
+	margin-left:50px;
+}
+.reg_text_2{
+	margin-left:175px;
+}
+.reg_text_3{
+	margin-left:175px;
+}
+.reg_inp{
+	margin-top:138px;
+	margin-bottom:30px;
+}
+.reg_inp input{
+	width:472px;
+	height:43px;
+	padding-left:14px;
+	border:1px solid #bdbdbd;
+	border-radius:3px;
+	margin-left:68px;
+}
+.reg_btn a{
+	display:block;
+	width:486px;
+	height:45px;
+	line-height:45px;
+	background:#1c88e3;
+	color:#fff;
+	text-align:center;
+	border-radius:3px;
+	margin-left:68px;
+}
+.reg_btn a:hover{
+	text-decoration:none;
+}
+.mar_t25 {
+    margin-top: 25px;
+}
+.mar_t29 {
+    margin-top: 29px;
+}
+.reg_box4 .reg_inp input {
+    margin-left: 0px;
+    width: 470px;
+}
+.reg_box4 .reg_btn a {
+    margin-left: 0;
+}
+.reg_box4 .reg_inp2 input {
+    width: 296px;
+    margin-left:0;
+    border-right:none;
+}
+.reg_inp2 a {
+    width: 189px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background: #1c88e3;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+}
+.reg_box4 .reg_inp2 a {
+    width: 175px;
+}
+.reg_box4 .reg_inp2 a:hover{
+    background-color: #209bfd;
+}
+.reg_box4 .reg_btn a:hover{
+    background-color: #209bfd;
+}
+.land2_box .land_btn:hover{
+    background-color: #209bfd;
+}
