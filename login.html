@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/login-tpl.css">
-</head>
-<body>
-	
-</body>
-</html>
-
-
+<link rel="stylesheet" href="css/login-tpl.css">
 <!--登陆弹框-->
 <div class="mask_none js-tpl-login-box" style="display:block;">
 	<div class="mask_tenper"></div>
@@ -39,7 +27,7 @@
 				<p class="land_wordp2" id="password_prompt_"></p>
 			</div>
 			<div class="land_forget clearfix">
-				<span class="fl">自动登录</span> 
+				<span class="fl">自动登录</span>
 				<a class="fr" href="javascript:rewardForgetPwd();">忘记密码</a>
 			</div>
 			<div class="land_btn" onclick="submitLoginForm();">登录</div>
@@ -78,11 +66,10 @@
 				<input type="button" id="jumpRestButton" onclick="rewardResetPwd();" value="下一步"/>
 			</div>
 	</div>
-</div>	
+</div>
 <!--找回密码二弹框-->
 
 <iframe id="iframeId" style="display: none;"></iframe>
-<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 <script>
 	//登录表单提交
 function submitLoginForm(){
@@ -93,13 +80,13 @@ function submitLoginForm(){
 	// 加密
 	var pwd = $("#password_").val();
 	$("#password2").val(pwd);
-	
+
 	// 提交
 	var param = $("#form_login").serialize();
 	$.ajax({
     	async: true,
 		type: "post",
-        url: "http://192.168.1.112:8080/user/login",
+        url: BaseUrl+ "/user/login",
         data: param,
         dataType: "json",
         success: function(data){
@@ -115,6 +102,10 @@ function submitLoginForm(){
             return false;
         }
 	});
+}
+
+function colseLoginBox(){
+    $('.mask_none').hide();
 }
 
 //登录表单提前验证处理
@@ -175,7 +166,7 @@ $(function(){
 		$(this).siblings('.land_wordiv1').show();
 		$(this).siblings('.land_wordiv2').hide();
 	});
-	
+
 	$('.land_worinp1').blur(function(){
 		if($('.land_worinp1').val()==''){
 			$('.land_phone .land_wordiv2').show();
@@ -188,7 +179,7 @@ $(function(){
 			$('.land_pass .land_wordiv1').hide();
 		}
 	});
-	
+
 	if($('.land_worinp1').val()!=''){
 		$('.land_phone .land_wordiv2').hide();
 		$('.land_phone .land_wordiv1').show();
