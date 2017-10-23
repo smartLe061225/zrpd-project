@@ -1,0 +1,170 @@
+{
+        "data": [
+                {
+                        "id": 1, 
+                        "tradeCode": "A", 
+                        "tradeCategory": "农、林、牧、渔业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418611755000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 2, 
+                        "tradeCode": "B", 
+                        "tradeCategory": "采矿业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418611756000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 3, 
+                        "tradeCode": "C", 
+                        "tradeCategory": "制造业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 4, 
+                        "tradeCode": "D", 
+                        "tradeCategory": "电力、热力、燃气及水生产和供应业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 5, 
+                        "tradeCode": "E", 
+                        "tradeCategory": "建筑业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 6, 
+                        "tradeCode": "F", 
+                        "tradeCategory": "交通运输、仓储和邮政业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 7, 
+                        "tradeCode": "G", 
+                        "tradeCategory": "信息传输、软件和信息技术服务业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 8, 
+                        "tradeCode": "H", 
+                        "tradeCategory": "批发和零售业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 9, 
+                        "tradeCode": "I", 
+                        "tradeCategory": "住宿和餐饮业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 10, 
+                        "tradeCode": "J", 
+                        "tradeCategory": "金融业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 11, 
+                        "tradeCode": "L", 
+                        "tradeCategory": "租赁和商务服务业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 12, 
+                        "tradeCode": "M", 
+                        "tradeCategory": "科学研究和技术服务业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 13, 
+                        "tradeCode": "N", 
+                        "tradeCategory": "水利、环境和公共设施管理业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 14, 
+                        "tradeCode": "O", 
+                        "tradeCategory": "居民服务、修理和其他服务业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 15, 
+                        "tradeCode": "P", 
+                        "tradeCategory": "教育", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 16, 
+                        "tradeCode": "Q", 
+                        "tradeCategory": "卫生、社会保障和社会福利业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 17, 
+                        "tradeCode": "R", 
+                        "tradeCategory": "文化、体育和娱乐业", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }, 
+                {
+                        "id": 18, 
+                        "tradeCode": "X", 
+                        "tradeCategory": "其他", 
+                        "addtime": 1418361953000, 
+                        "editorId": 1, 
+                        "editorTime": 1418361953000, 
+                        "isUsed": 1
+                }
+        ], 
+        "totalRow": 18, 
+        "totalPage": 1, 
+        "currentPage": 0, 
+        "pageSize": 100
+}
