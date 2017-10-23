@@ -1,0 +1,14 @@
+<svg version='1.1' id='svg-draw' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'  width='100%' height='100%' xml:space='preserve'>
+	<g id='svg-content'>
+		<g id='svg-logo' class='svg-element'>
+			<ellipse fill='#27AAE1' cx='50' cy='50' rx='6.6' ry='6.2'/>
+			<g>
+				<path fill='#27AAE1' d='M92,55.4V43.9L67.1,23.8l2.4-1.9V10.3L59.9,18l-9.9-8l-9.9,8l-9.5-7.7v11.6l2.4,1.9L8,43.9v11.6l32.1-25.9l2.7,2.2L27.4,44.2v11.6L50,37.6l22.6,18.2V44.2L57.2,31.8l2.7-2.2L92,55.4z M50,26l-2.7-2.2l2.7-2.2v0l2.7,2.2L50,26z'/>
+				<path fill='#1C75BC' d='M59.9,70.4l-2.7-2.2l15.4-12.4V44.3L50,62.4L27.4,44.3v11.6l15.4,12.4l-2.7,2.2L8,44.5v11.6l24.9,20.1l-2.4,1.9v11.6l9.5-7.7l9.9,8l9.9-8l9.5,7.7V78.1l-2.4-1.9L92,56.1V44.5L59.9,70.4z M52.7,76.2L50,78.4v0l-2.7-2.2L50,74L52.7,76.2z'/>
+			</g>
+		</g>
+		<g id='svg-name' class='svg-element'></g>
+		<g id='svg-slogan' class='svg-element'></g>
+		<g id='svg-atext' class='svg-element'></g>
+	</g>
+</svg>

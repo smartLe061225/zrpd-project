@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?s4v1bl');
-  src:  url('fonts/icomoon.eot?s4v1bl#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?s4v1bl') format('truetype'),
-    url('fonts/icomoon.woff?s4v1bl') format('woff'),
-    url('fonts/icomoon.svg?s4v1bl#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?pjqpo9');
+  src:  url('fonts/icomoon.eot?pjqpo9#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?pjqpo9') format('truetype'),
+    url('fonts/icomoon.woff?pjqpo9') format('woff'),
+    url('fonts/icomoon.svg?pjqpo9#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -62,23 +62,24 @@
 .icon-project5:before {
   content: "\e90b";
 }
+.icon-project6:before {
+  content: "\e911";
+}
 .icon-refresh:before {
   content: "\e90c";
-  color: #fff;
 }
 .icon-select:before {
   content: "\e90d";
-  color: #17e;
 }
 .icon-download:before {
   content: "\e90e";
-  color: #fff;
 }
 .icon-price:before {
   content: "\e90f";
-  color: #fff;
 }
 .icon-save:before {
   content: "\e910";
-  color: #fff;
+}
+.icon-plus:before {
+  content: "\ea0a";
 }

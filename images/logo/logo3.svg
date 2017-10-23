@@ -1,0 +1,15 @@
+<svg version='1.1' id='svg-draw' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'  width='100%' height='100%' xml:space='preserve'>
+	<g id='svg-content'>
+		<g id='svg-logo' class='svg-element'>
+			<g>
+				<polygon fill='#1C75BC' points='47.2,51.9 32.7,88 24.7,90.4 28.2,57.7 28.2,57.7 7,32.5 15,30.1'/>
+				<polygon fill='#1C75BC' points='52.8,51.9 67.3,88 75.3,90.4 71.8,57.7 71.8,57.7 93,32.5 85,30.1'/>
+			</g>
+			<path fill='#F7931E' d='M63.3,22.9c0-7.4-6-13.3-13.3-13.3c-7.4,0-13.3,6-13.3,13.3c0,7.4,6,13.3,13.3,13.3
+				C57.4,36.3,63.3,30.3,63.3,22.9z'/>
+		</g>
+		<g id='svg-name' class='svg-element'></g>
+		<g id='svg-slogan' class='svg-element'></g>
+		<g id='svg-atext' class='svg-element'></g>
+	</g>
+</svg>
