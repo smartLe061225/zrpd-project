@@ -84,7 +84,7 @@ function submitLoginForm(){
 	// 提交
 	var param = $("#form_login").serialize();
 	$.ajax({
-    	async: true,
+    	async: false,
 		type: "post",
         url: BaseUrl+ "/user/login",
         data: param,

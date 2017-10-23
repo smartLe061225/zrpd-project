@@ -14,7 +14,7 @@ $.loadForm = function(){
 
     // load trade
     $.post(ajaxTradeUrl, function(json){
-    	var result = JSON.parse(json).data;
+        var result = JSON.parse(json).data;
     	var html = '';
     	if (result.length) {
     		$(result).each(function(){
@@ -111,7 +111,7 @@ $.loadMaterial = function(){
         }else{
             elementDOM = '暂无元素';
         }
-        $('.js-ajax-shape').find('.mCSB_container').html(shapeDOM)        
+        $('.js-ajax-shape').find('.mCSB_container').html(shapeDOM)
         $('.js-ajax-alpha').find('.mCSB_container').html(alphaDOM)
         $('.js-ajax-numeric').find('.mCSB_container').html(numericDOM)
         $('.js-ajax-element').find('.mCSB_container').html(elementDOM)
@@ -220,7 +220,7 @@ $.checkout = function(svg){
             	result = data.aiLogo,
             	svgResult = data.svg;
             	$.svgParams.svg = svgResult;
-			
+
 			$('.js-svg-preview').html(svgResult);
             $('.js-download-png').attr({'href':result.imgPath})
             $('.js-download-svg').attr({'href':result.svgPath})
@@ -254,11 +254,19 @@ $.save = function(id){
 }
 // login check
 $.login = function() {
-	$.post('http://192.168.1.112:8080/logo/checkLogin', function(res){
-		return (res=='1') ? !0 : ($.get(getLoginTpl, function(html){
-			$('body').append(html)
-		}), !1)
-	})
+    var a;
+    $.ajax({
+        type: 'POST',
+        url: checkLoginUrl,
+        async: false,
+        success: function(json){
+            a = (json == '1') ? !0 : !1;
+        }
+    })
+
+    return a ? !0 : ($.get(getLoginTpl, function(html) {
+        $('body').append(html)
+    }), !1)
 }
 
 $(function(){
