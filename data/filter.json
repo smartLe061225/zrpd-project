@@ -1,0 +1,286 @@
+{
+    "shape": [
+        {
+            "id": 1,
+            "name": "正方形",
+            "type": 1,
+            "code": "shape"
+        },
+        {
+            "id": 2,
+            "name": "圆形",
+            "type": 1,
+            "code": "shape"
+        },
+        {
+            "id": 3,
+            "name": "三角形",
+            "type": 1,
+            "code": "shape"
+        },
+        {
+            "id": 4,
+            "name": "多边形",
+            "type": 1,
+            "code": "shape"
+        },
+        {
+            "id": 5,
+            "name": "其他",
+            "type": 1,
+            "code": "shape"
+        }
+    ],
+    "alpha": [
+        {
+            "id": 6,
+            "name": "A",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 7,
+            "name": "B",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 8,
+            "name": "C",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 9,
+            "name": "D",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 10,
+            "name": "E",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 11,
+            "name": "F",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 12,
+            "name": "G",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 13,
+            "name": "H",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 14,
+            "name": "I",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 15,
+            "name": "J",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 16,
+            "name": "K",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 17,
+            "name": "L",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 18,
+            "name": "M",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 19,
+            "name": "N",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 20,
+            "name": "O",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 21,
+            "name": "P",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 22,
+            "name": "Q",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 23,
+            "name": "R",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 24,
+            "name": "S",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 25,
+            "name": "T",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 26,
+            "name": "U",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 27,
+            "name": "V",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 28,
+            "name": "W",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 29,
+            "name": "X",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 30,
+            "name": "Y",
+            "type": 2,
+            "code": "alpha"
+        },
+        {
+            "id": 31,
+            "name": "Z",
+            "type": 2,
+            "code": "alpha"
+        }
+    ],
+    "numeric": [
+        {
+            "id": 32,
+            "name": "1",
+            "type": 3,
+            "code": "numeric"
+        },
+        {
+            "id": 33,
+            "name": "2",
+            "type": 3,
+            "code": "numeric"
+        },
+        {
+            "id": 34,
+            "name": "3",
+            "type": 3,
+            "code": "numeric"
+        },
+        {
+            "id": 35,
+            "name": "4",
+            "type": 3,
+            "code": "numeric"
+        },
+        {
+            "id": 36,
+            "name": "5",
+            "type": 3,
+            "code": "numeric"
+        },
+        {
+            "id": 37,
+            "name": "6",
+            "type": 3,
+            "code": "numeric"
+        },
+        {
+            "id": 38,
+            "name": "7",
+            "type": 3,
+            "code": "numeric"
+        },
+        {
+            "id": 39,
+            "name": "8",
+            "type": 3,
+            "code": "numeric"
+        },
+        {
+            "id": 40,
+            "name": "9",
+            "type": 3,
+            "code": "numeric"
+        }
+    ],
+    "element": [
+        {
+            "id": 41,
+            "name": "合作共赢",
+            "type": 4,
+            "code": "element"
+        },
+        {
+            "id": 42,
+            "name": "热情阳光",
+            "type": 4,
+            "code": "element"
+        },
+        {
+            "id": 43,
+            "name": "精工科技",
+            "type": 4,
+            "code": "element"
+        },
+        {
+            "id": 44,
+            "name": "温馨爱心",
+            "type": 4,
+            "code": "element"
+        },
+        {
+            "id": 45,
+            "name": "风水八卦",
+            "type": 4,
+            "code": "element"
+        },
+        {
+            "id": 46,
+            "name": "动物元素",
+            "type": 4,
+            "code": "element"
+        }
+    ]
+}

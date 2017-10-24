@@ -1,0 +1,61 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "logo_id": "1",
+            "kind_id": 6,
+            "img_path": "<li><svg width=\"100%\" height=\"100%\" viewBox=\"0 0 520 360\"><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"/images/application/app1.jpg\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\"></image><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"http://192.168.8.129:8080/logo/api/getSvgLogo?material_id=14&name=threetown&slogan=\" x=\"0\" y=\"0\" width=\"100\" height=\"100\" transform=\"matrix(0.788,0.615,-0.615,0.788,280,70)\"></image><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"http://192.168.8.129:8080/logo/api/getSvgLogo?material_id=14&name=threetown&slogan=\" x=\"0\" y=\"0\" width=\"100\" height=\"100\" transform=\"matrix(.5,0,0,.5,150,170)\"></image></svg></li>",
+            "user_id": null,
+            "add_time": null,
+            "editor_id": null,
+            "editor_time": null,
+            "state": 1,
+            "rsrv_str1": null,
+            "rsrv_str2": null,
+            "rsrv_str3": null
+        },
+        {
+            "id": 2,
+            "logo_id": "1",
+            "kind_id": 7,
+            "img_path": "<li><svg width=\"100%\" height=\"100%\" viewBox=\"0 0 520 360\"><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"/images/application/app2.jpg\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\"></image><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"http://192.168.8.129:8080/logo/api/getSvgLogo?material_id=14&name=threetown&slogan=&amp;nc=a6a4a7\" x=\"0\" y=\"0\" width=\"100\" height=\"100\" transform=\"matrix(1,0,0,1,120,130)\"></image><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"http://192.168.8.129:8080/logo/api/getSvgLogo?material_id=14&name=threetown&slogan=\" x=\"0\" y=\"0\" width=\"100\" height=\"100\" transform=\"matrix(.8,0,0,.8,335,110)\"></image></svg></li>",
+            "user_id": null,
+            "add_time": null,
+            "editor_id": null,
+            "editor_time": null,
+            "state": 1,
+            "rsrv_str1": null,
+            "rsrv_str2": null,
+            "rsrv_str3": null
+        },
+        {
+            "id": 3,
+            "logo_id": "1",
+            "kind_id": 8,
+            "img_path": "<li><svg width=\"100%\" height=\"100%\" viewBox=\"0 0 520 360\"><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"/images/application/app3.jpg\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\"></image><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"http://192.168.8.129:8080/logo/api/getSvgLogo?material_id=14&name=threetown&slogan=&amp;\" x=\"0\" y=\"0\" width=\"100\" height=\"100\" transform=\"matrix(.6,0,0,.6,200,0)\"></image><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"http://192.168.8.129:8080/logo/api/getSvgLogo?material_id=14&name=threetown&slogan=&amp;nc=a6a4a7\" x=\"0\" y=\"0\" width=\"100\" height=\"100\" transform=\"matrix(.5,0,0,.5,85,155)\"></image></svg></li>",
+            "user_id": null,
+            "add_time": null,
+            "editor_id": null,
+            "editor_time": null,
+            "state": 1,
+            "rsrv_str1": null,
+            "rsrv_str2": null,
+            "rsrv_str3": null
+        },
+        {
+            "id": 4,
+            "logo_id": "1",
+            "kind_id": 3,
+            "img_path": "<li><svg width=\"100%\" height=\"100%\" viewBox=\"0 0 520 360\"><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"/images/application/app4.jpg\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\"></image><image xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"http://192.168.8.129:8080/logo/api/getSvgLogo?material_id=14&name=threetown&slogan=&amp;nc=87857f\" x=\"0\" y=\"0\" width=\"100\" height=\"100\" transform=\"matrix(1.1,0,0,1.1,222,135)\"></image></svg></li>",
+            "user_id": null,
+            "add_time": null,
+            "editor_id": null,
+            "editor_time": null,
+            "state": 1,
+            "rsrv_str1": null,
+            "rsrv_str2": null,
+            "rsrv_str3": null
+        }
+    ],
+    "error": 0
+}
