@@ -1,4 +1,5 @@
 # logo定制
+* 竞品: [LogoFree](http://www.logofree.cn/logo.html)
 
 ## 素材上传
 * 后台上传 `svg` 图片，并 **保存图片地址**，同时 **提取svg图形代码**
