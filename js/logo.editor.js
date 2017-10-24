@@ -12,7 +12,7 @@ $.svgEditor = function(a, b) {
         data: b
     }),
     c.init = function() {
-        b.svg.viewbox(0, 0, 670, 500),
+        b.svg.viewbox(0, 0, 700, 480),
         b.svg.box = b.svg.rbox(),
         b.logo.box = b.logo.rbox(),
         b.ghost || (b.ghost = b.svg.group().id("svg-ghost")),
@@ -93,7 +93,7 @@ $.svgEditor = function(a, b) {
             if (c) return console.log(d),
             void console.log("Font could not be loaded: " + c);
             var e = d.getPath(a.data.name.text, 0, 40, 50);
-            $("#svg-name").html('<g transform="matrix(1,0,0,1,0,0)" fill="#3e3a39">' + e.toSVG() + "</g>"),
+            $("#svg-name").html('<g transform="matrix(1,0,0,1,0,0)" fill="#'+a.data.title_color+'">' + e.toSVG() + "</g>"),
             b && b()
         })),
         a.data.slogan.text && (a.data.slogan.font = a.data.slogan.font ? a.data.slogan.font: "/fonts/cn/fzhzgbjt.ttf", opentype.load(a.data.slogan.font,
@@ -101,7 +101,7 @@ $.svgEditor = function(a, b) {
             if (c) return console.log(d),
             void console.log("Font could not be loaded: " + c);
             var e = d.getPath(a.data.slogan.text, 0, 30, 25);
-            $("#svg-slogan").html('<g transform="matrix(1,0,0,1,0,0)" fill="#888888">' + e.toSVG() + "</g>"),
+            $("#svg-slogan").html('<g transform="matrix(1,0,0,1,0,0)" fill="#'+a.data.slogan_color+'">' + e.toSVG() + "</g>"),
             b && b()
         })),
         a.data.atext.text && (a.data.atext.font = a.data.atext.font ? a.data.atext.font: "/fonts/cn/fzhzgbjt.ttf", opentype.load(a.data.atext.font,
@@ -124,7 +124,7 @@ $.svgEditor = function(a, b) {
         });
         var b = a.logo.rbox().w > a.logo.rbox().h ? 160 / a.logo.rbox().w: 160 / a.logo.rbox().h;
         switch (a.logo.scale(b, b), a.data.layout) {
-        case 2:
+        case 6:
             b = .6 * b,
             a.logo.scale(b, b);
             var c = 60,
@@ -132,14 +132,59 @@ $.svgEditor = function(a, b) {
             e = a.logo.rbox().w + d,
             f = a.svg.box.w / 2 - e / 2 - c;
             a.logo.x(f - c),
-            a.name.dy( - 10).x(f + a.logo.rbox().w + c),
+            a.name.dy(20).x(f + a.logo.rbox().w + c),
+            a.slogan.dy( -18).x(f + a.logo.rbox().w + c);
+            break;
+        case 5:
+            b = .6 * b,
+            a.logo.scale(b, b);
+            var c = 60,
+            //中文的宽度如果大于英文的宽度，则取宽的那一个数据
+            d = a.name.rbox().w > a.slogan.rbox().w ? a.name.rbox().w: a.slogan.rbox().w,
+            //logo的宽度加上中英文的宽度
+            e = a.logo.rbox().w + d,
+            //页面宽度的一半减去中英文宽度加logo宽度的一半减去60
+            f = a.svg.box.w / 2 - e / 2 - c;
+            a.logo.x(f + d*2),
+            a.name.dy(20).x(f + c),
+            a.slogan.dy( -18).x(f + c);
+            break;
+        case 4:
+            b = .7 * b,
+            a.logo.scale(b, b);
+            var c = 43,
+            d = a.name.rbox().w > a.slogan.rbox().w ? a.name.rbox().w: a.slogan.rbox().w,
+            e = a.logo.rbox().w + d,
+            f = a.svg.box.w / 2 - e / 2 - c;
+            a.logo.x(f - c),
+            a.name.dy( - 8).x(f + a.logo.rbox().w + c),
             a.slogan.dy(30).x(f + a.logo.rbox().w + c);
+            break;
+        case 3:
+            b = .7 * b,
+            a.logo.scale(b, b);
+            d = a.name.rbox().w > a.slogan.rbox().w ? a.name.rbox().w: a.slogan.rbox().w,
+            e = a.logo.rbox().w + d,
+            a.logo.dy( - 40),
+            a.name.dy(70),
+            a.slogan.dy(107)
+            break;
+        case 2:
+            b = .7 * b,
+            a.logo.scale(b, b);
+            var c = 43,
+            d = a.name.rbox().w > a.slogan.rbox().w ? a.name.rbox().w: a.slogan.rbox().w,
+            e = a.logo.rbox().w + d,
+            f = a.svg.box.w / 2 - e / 2 - c;
+            a.logo.x(f - c),
+            a.name.dy( - 8).x(f + a.logo.rbox().w + c),
+            a.slogan.dy(30).x(f + a.logo.rbox().w + c + (a.name.rbox().w - a.slogan.rbox().w)/2);
             break;
         case 1:
         default:
-            a.logo.dy( - 60),
+            a.logo.dy( - 58),
             a.name.dy(70),
-            a.slogan.dy(110)
+            a.slogan.dy(107)
         }
         a.ghost.clear()
     },
