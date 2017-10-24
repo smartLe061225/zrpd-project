@@ -20,3 +20,15 @@ var uploadPicUrl = BaseUrl + "/logo/uploadPic"
 var saveUploadLogo = BaseUrl + "/logo/saveUploadLogo"
 
 var getLoginTpl = '/login.html'
+
+
+/* FED test data */
+var ajaxTradeUrl = '/data/trade.json'
+var ajaxFilterUrl = '/data/filter.json'
+
+var listUrl = '/data/list.json'
+var svgViUrl = '/data/vi.json'
+
+var svgUrl = '/data/svg.json'
+
+var resultLogoUrl = '/data/result.json'

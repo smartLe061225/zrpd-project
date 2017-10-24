@@ -14,7 +14,8 @@ $.loadForm = function(){
 
     // load trade
     $.post(ajaxTradeUrl, function(json){
-        var result = JSON.parse(json).data;
+        // var result = JSON.parse(json).data;
+        var result = json.data;
     	var html = '';
     	if (result.length) {
     		$(result).each(function(){
@@ -74,7 +75,8 @@ $.loadMaterial = function(){
 
     // 筛选条件
     $.post(ajaxFilterUrl, function(json){
-        var result = JSON.parse(json);
+        // var result = JSON.parse(json);
+        var result = json;
         var shapeDOM = '',
         	alphaDOM = '',
         	numericDOM = '',
@@ -131,7 +133,8 @@ $.loadMaterial = function(){
     $.post(listUrl, $.svgParams, function(json){
         // 生成模板列表
         $('.selectLogoList', _DOM).empty();
-        var result = JSON.parse(json).data;
+        // var result = JSON.parse(json).data;
+        var result = json.data;
         if (result.length) {
             $(result).each(function(){
                 $('.selectLogoList', _DOM).append('<li data-id="'+this.id+'"><i class="icon-select"></i><img src="'+ svgLogoUrl + '?material_id=' + this.id +'&name='+ $.svgParams.name.text +'&slogan='+ $.svgParams.slogan.text +'" alt=""></li>')
@@ -186,11 +189,11 @@ $.loadMaterial = function(){
 
 // 第三步：编辑Logo
 $.loadEditor = function(){
-    if (!$.login()) {
-        return;
-    }
+    // if (!$.login()) {
+    //     return;
+    // }
     $.post(svgUrl, $.svgParams, function(ret){
-        $('.js-svg-editor').html(ret);
+        $('.js-svg-editor').html(ret.svg);
         $.svgEditor('svg-draw', $.svgParams);
 
         $('.js-checkout-logo').off('click').on('click', function(){
@@ -216,7 +219,8 @@ $.checkout = function(svg){
         data:JSON.stringify($.svgParams),
         success: function(json){
 
-            var data = JSON.parse(json),
+            // var data = JSON.parse(json),
+            var data = json,
             	result = data.aiLogo,
             	svgResult = data.svg;
             	$.svgParams.svg = svgResult;
