@@ -137,18 +137,28 @@ $.loadMaterial = function(){
         var result = json.data;
         if (result.length) {
             $(result).each(function(){
-                $('.selectLogoList', _DOM).append('<li data-id="'+this.id+'"><i class="icon-select"></i><img src="'+ svgLogoUrl + '?material_id=' + this.id +'&name='+ $.svgParams.name.text +'&slogan='+ $.svgParams.slogan.text +'" alt=""></li>')
+                // $('.selectLogoList', _DOM).append('<li data-id="'+this.id+'"><i class="icon-select"></i><img src="'+ svgLogoUrl + '?material_id=' + this.id +'&name='+ $.svgParams.name.text +'&slogan='+ $.svgParams.slogan.text +'" alt=""></li>')
+                //字体颜色
+                var title_color = this.title_color ? this.title_color : '000';
+                var slogan_color = this.slogan_color ? this.slogan_color : '888';
+                // console.log(this.title_color);
+                $('.selectLogoList', _DOM).append('<li data-id="'+this.id+'" data-title_color="'+title_color+'" data-slogan_color="'+slogan_color+'"><i class="icon-select"></i>'
+                    +'<img width="230" height="230" src="' + svgLogoUrl + '?material_id='+this.id+'&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text+'" /></li>');
             });
-            //$('.selectLogoList li').eq(0).trigger('click');
         } else {
             $('.selectLogoList', _DOM).html('<div class="notfound">暂无相关图形</div>');
         }
         // 点击列表，显示VI图
         $('li', _DOM).on('click', function(){
             var id = $(this).data('id');
+            var title_color = $(this).data('title_color');
+            var slogan_color = $(this).data('slogan_color');
+
             $(this).addClass('active').siblings('li').removeClass('active');
 
             $.svgParams.material_id = id;
+            $.svgParams.title_color = title_color;
+            $.svgParams.slogan_color = slogan_color;
 
             var url = svgLogoUrl + '?material_id='+id+'&name='+$.svgParams.name.text+'&slogan='+$.svgParams.slogan.text;
             $.post(svgViUrl, {logoUrl: url, logoId: id}, function(html){
